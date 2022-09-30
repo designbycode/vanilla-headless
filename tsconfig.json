@@ -5,6 +5,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "removeComments": true,
+    "declaration": true,
     "types": ["jest"]
   },
   "exclude": [
