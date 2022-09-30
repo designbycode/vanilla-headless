@@ -1,5 +1,5 @@
 {
-  "name": "headless.js",
+  "name": "vanilla-headless",
   "version": "0.0.0",
   "main": "dist/index.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "test:watch": "npm run test -- --watch",
     "precommit": "npm run test && lint-staged",
     "prebuild": "echo \"pre build\"",
-    "build": "tsc -p tsconfig.json && rollup -c rollup.config.js"
+    "build": "tsc -p tsconfig.json"
   },
   "keywords": [
     "headlessui"
