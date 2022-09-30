@@ -4,6 +4,7 @@
     "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
+    "removeComments": true,
     "types": ["jest"]
   },
   "exclude": [
