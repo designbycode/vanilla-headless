@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "precommit": "npm run test",
+    "precommit": "npm run test && lint-staged",
     "build": "tsc -p tsconfig.json"
   },
   "keywords": [
@@ -39,5 +39,11 @@
     "transform": {
       ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
