@@ -10,19 +10,40 @@ class HeadlessNavigation extends HeadlessUi {
     this.button = this.querySelector("[aria-controls][aria-expanded]")
     this.mainContainer = this.querySelector(`#${this.button?.getAttribute("aria-controls")}`)
     if (!this.button) {
-      throw new Error(`A button element with attribute "aria-controls" and "aria-expanded" or is="button" is required`)
+      throw new Error(`A button element with attribute "aria-controls" and "aria-expanded" is required`)
     }
     if (!this.mainContainer) {
-      throw new Error(`A div element with id equals button "aria-controls" or is="panel" is required`)
+      throw new Error(`A div element with id equals button "aria-controls" is required`)
     }
   }
 
-  protected buttonKeyEvent(event: KeyboardEvent) {
+  /**
+   * Bind event listeners to connectedCallback
+   * @override
+   * */
+  protected addEventListeners() {
+    super.addEventListeners()
+    window.addEventListener("resize", this.closeOnResize.bind(this))
+  }
+
+  /**
+   * Remove event listeners to connectedCallback
+   * @override
+   * */
+  protected removeEventListeners() {
+    super.removeEventListeners()
+    window.removeEventListener("resize", this.closeOnResize)
+  }
+
+  /**
+   * Keyboard event for button with attribute of aria-expanded and aria-haspopup
+   * @override
+   * */
+  protected buttonKeyEvent(event: KeyboardEvent): void {
     if (keycodeEquals(["Space", "Enter"], event)) {
       event.preventDefault()
       this.toggleOpen()
     }
-
     keycodeEquals(["Escape"], event) && this.close()
   }
 }
