@@ -2,6 +2,9 @@
   "name": "vanilla-headless",
   "version": "0.1.1",
   "main": "dist/index.js",
+  "description": "Inspired by HeadlessUi, Vanilla Headless is Web Component library that adds interactive with keyboard and mouse events",
+  "repository": "https://github.com/DesignByCode/vanilla-headless",
+  "homepage": "https://github.com/DesignByCode/vanilla-headless",
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
@@ -14,7 +17,6 @@
   ],
   "author": "designbycode",
   "license": "MIT",
-  "description": "",
   "devDependencies": {
     "@types/jest": "^29.1.1",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
