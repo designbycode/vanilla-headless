@@ -1,6 +1,6 @@
 # Vanilla Headless
 
-![](C:\www\npm-packages\headless-js\img\git-banner.jpg)
+![](./img/git-banner.jpg)
 
 - [Install](#install)
 - [Import](#import)
