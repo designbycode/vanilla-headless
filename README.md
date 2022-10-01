@@ -37,7 +37,7 @@ import "vanilla-headless"
 - Dropdown
   - must have attributes of ``aria-labelledby``
 
-![](.\img\popover.gif)
+![](./img/popover.gif)
 
 ```html
 <!-- require tailwindcss for example -->
@@ -154,7 +154,7 @@ import "vanilla-headless"
   - must have attributes of ``aria-labelledby``
   - dropdown require at least 1 anchor or button tag with attribute `role="menuitem"`
 
-![](.\img\dropdown.gif)
+![](./img/dropdown.gif)
 
 ```html
 <!-- require tailwindcss for example -->
@@ -218,7 +218,7 @@ import "vanilla-headless"
 - Dropdown
   - must have a `ID` matching `aria-controls`
 
-![](.\img\discosure.gif)
+![](./img/discosure.gif)
 
 ```html
 <!-- require tailwindcss for example -->
