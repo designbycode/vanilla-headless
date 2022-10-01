@@ -37,6 +37,8 @@ import "vanilla-headless"
 - Dropdown
   - must have attributes of ``aria-labelledby``
 
+![](C:\www\npm-packages\headless-js\img\popover.gif)
+
 ```html
 <!-- require tailwindcss for example -->
 <headless-popover class="relative" offsets="0 10" placement="bottom-end bottom" popper>
@@ -152,6 +154,8 @@ import "vanilla-headless"
   - must have attributes of ``aria-labelledby``
   - dropdown require at least 1 anchor or button tag with attribute `role="menuitem"`
 
+![](C:\www\npm-packages\headless-js\img\dropdown.gif)
+
 ```html
 <!-- require tailwindcss for example -->
 <headless-dropdown class="relative inline-block text-left" placement="bottom-end bottom" popper>
@@ -213,6 +217,8 @@ import "vanilla-headless"
   - must have attributes of `aria-controls` and `aria-expanded`
 - Dropdown
   - must have a `ID` matching `aria-controls`
+
+![](C:\www\npm-packages\headless-js\img\discosure.gif)
 
 ```html
 <!-- require tailwindcss for example -->
