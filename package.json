@@ -1,6 +1,6 @@
 {
   "name": "vanilla-headless",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "build/index.js",
   "description": "Inspired by HeadlessUi, Vanilla Headless is Web Component library that adds interactive with keyboard and mouse events",
   "repository": "https://github.com/DesignByCode/vanilla-headless",
@@ -14,7 +14,10 @@
     "build": "tsc -p tsconfig.json && rollup -c"
   },
   "keywords": [
-    "headlessui", "popover", "dropdown", "navigation toggle"
+    "headlessui",
+    "popover",
+    "dropdown",
+    "navigation toggle"
   ],
   "author": "designbycode",
   "license": "MIT",
