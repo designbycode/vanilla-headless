@@ -1,19 +1,20 @@
 {
   "name": "vanilla-headless",
   "version": "0.1.1",
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "description": "Inspired by HeadlessUi, Vanilla Headless is Web Component library that adds interactive with keyboard and mouse events",
   "repository": "https://github.com/DesignByCode/vanilla-headless",
   "homepage": "https://github.com/DesignByCode/vanilla-headless",
   "scripts": {
+    "clean": "rd /s /q esm dist lib build .cache>nul 2>&1|echo.>nul",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "precommit": "npm run test && lint-staged",
-    "prebuild": "echo \"pre build\"",
-    "build": "tsc -p tsconfig.json"
+    "prebuild": "npm run clean",
+    "build": "tsc -p tsconfig.json && rollup -c"
   },
   "keywords": [
-    "headlessui"
+    "headlessui", "popover", "dropdown", "navigation toggle"
   ],
   "author": "designbycode",
   "license": "MIT",
