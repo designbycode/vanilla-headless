@@ -105,6 +105,15 @@ class HeadlessDropdown extends HeadlessUi {
     keycodeEquals(["ArrowUp", "ArrowLeft"], event) && this.#indexPointer > 0 && this.#indexPointer--
     if (keycodeEquals(["Home"], event) && this.#indexPointer > 0) this.#indexPointer = 0
     if (keycodeEquals(["End"], event) && this.#indexPointer < this.menuItems.length) this.#indexPointer = this.menuItems.length - 1
+    if (!event.shiftKey && keycodeEquals(["Tab"], event)) {
+      this.#indexPointer++
+      if (this.#indexPointer > this.menuItems.length - 1) {
+        console.log(this.nextSibling)
+      }
+    }
+    if (event.shiftKey && keycodeEquals(["Tab"], event)) {
+      this.#indexPointer--
+    }
   }
 
   /**

@@ -14,13 +14,6 @@ export default class HeadlessUi extends HTMLElement {
     super()
     this.button = this.querySelector("[aria-haspopup][aria-expanded]")
     this.mainContainer = this.querySelector("[aria-labelledby]")
-    if (!this.button) {
-      throw new Error(`A button element with attribute "aria-haspopup" and "aria-expanded" or is="button" is required`)
-    }
-    if (!this.mainContainer) {
-      throw new Error(`A div element with attribute "aria-labelledby" or is="panel" is required`)
-    }
-
     this.createPopper = createPopper
   }
 
@@ -59,7 +52,7 @@ export default class HeadlessUi extends HTMLElement {
   }
 
   /**
-   * Check if element with attribute aria-labelledby has a attribute of hidden
+   * Check if element with attribute aria-labelledby has an attribute of hidden
    * @return boolean
    * */
   protected get hiddenAttribute(): boolean {
@@ -110,10 +103,24 @@ export default class HeadlessUi extends HTMLElement {
     this.addEventListeners()
 
     this.popper && this.popperInit()
+
+    this.checkRequirements()
   }
 
   disconnectedCallback() {
     this.removeEventListeners()
+  }
+
+  /**
+   * Check if required element is present
+   * */
+  protected checkRequirements() {
+    if (!this.button) {
+      throw new Error(`A button element with attribute "aria-haspopup" and "aria-expanded" is required`)
+    }
+    if (!this.mainContainer) {
+      throw new Error(`A div element with attribute "aria-labelledby" is required`)
+    }
   }
 
   /**
@@ -154,6 +161,13 @@ export default class HeadlessUi extends HTMLElement {
             name: "flip",
             options: {
               fallbackPlacements: [<Placement>this.placement[0] || <Placement>"bottom-end", <Placement>this.placement[1] || <Placement>"bottom-start"],
+            },
+          },
+          {
+            name: "arrow",
+            options: {
+              element: this.querySelector(`[data-popper-arrow]`),
+              padding: 5,
             },
           },
         ],
@@ -214,12 +228,5 @@ export default class HeadlessUi extends HTMLElement {
    * */
   protected closeOnExitKeyDown(event: KeyboardEvent) {
     keycodeEquals(["Escape"], event) && this.close()
-  }
-
-  /**
-   * Window event for closing htmlElement with attribute of aria-labelledby by resizing window
-   * */
-  protected closeOnResize() {
-    this.close()
   }
 }
