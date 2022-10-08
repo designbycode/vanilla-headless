@@ -28,6 +28,9 @@ npm i vanilla-headless
 ```typescript
 import "vanilla-headless"
 ```
+<small> <em> That is it, no other javascript is required just make sure that your html is aria compliant 
+</em>
+</small>
 
 ## Web Components
 
