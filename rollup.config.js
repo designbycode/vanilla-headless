@@ -1,5 +1,7 @@
-const sourcemaps = require("rollup-plugin-sourcemaps")
-const packageJson = require("./package.json")
+import sourcemaps from "rollup-plugin-sourcemaps"
+import resolve from "@rollup/plugin-node-resolve"
+import babel from "@rollup/plugin-babel"
+import packageJson from "./package.json"
 
 // const files = (dir) => {
 //   return fs
@@ -14,20 +16,20 @@ export default [
     output: {
       name: packageJson.name,
       file: "./build/utils/index.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/utils/keycode-equals.js",
     output: {
       name: packageJson.name,
       file: "./build/utils/keycode-equals.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
 
   {
@@ -35,79 +37,79 @@ export default [
     output: {
       name: packageJson.name,
       file: "./build/utils/no-null-object.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/utils/random-id.js",
     output: {
       name: packageJson.name,
       file: "./build/utils/random-id.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/index.js",
     output: {
       name: packageJson.name,
       file: "./build/index.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/headless-ui.js",
     output: {
       name: packageJson.name,
       file: "./build/headless-ui.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/headless-popover.js",
     output: {
       name: packageJson.name,
       file: "./build/headless-popover.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/headless-navigation.js",
     output: {
       name: packageJson.name,
       file: "./build/headless-navigation.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/headless-dropdown.js",
     output: {
       name: packageJson.name,
       file: "./build/headless-dropdown.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
   {
     input: "./dist/headless-disclosure.js",
     output: {
       name: packageJson.name,
       file: "./build/headless-disclosure.js",
-      format: "es",
+      format: "cjs",
       sourcemap: true,
     },
-    plugins: [sourcemaps()],
+    plugins: [sourcemaps(), resolve(), babel({ babelHelpers: "bundled" })],
   },
 ]
