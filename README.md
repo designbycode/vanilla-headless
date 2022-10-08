@@ -27,7 +27,7 @@ yarn add vanilla-headless
 ```
 
 ```bash
-yarn add vanilla-headless
+https://unpkg.com/vanilla-headless@0.1.3/build/index.js
 ```
 
 ### Import
