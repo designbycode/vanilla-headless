@@ -1,76 +1,17 @@
-# Vanilla Headless
-[![npm version](https://badge.fury.io/js/vanilla-headless.svg)](https://badge.fury.io/js/vanilla-headless)
-![npm](https://img.shields.io/npm/dt/vanilla-headless)
-[![GitHub stars](https://img.shields.io/github/stars/DesignByCode/vanilla-headless?style=social)](https://github.com/DesignByCode/vanilla-headless/stargazers)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-36 space-y-24">
 
-
-[![NPM](https://nodei.co/npm/vanilla-headless.png)](https://nodei.co/npm/vanilla-headless/)
-
-![](./img/git-banner.jpg)
-
-- [Install](#install)
-- [Import](#import)
-- [Web Components](#web-components)
-  - [Popover](#popover-with-aria-keyboard-navigation)
-  - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
-  - [Disclosure](#disclosure-with-aria-keyboard-navigation)
-  - [Mobile Navigation]()
-- [Use with PopperJs](#popperjs)
-
-### Install
-
-```bash
-npm i vanilla-headless
-```
-```bash
-yarn add vanilla-headless
-```
-
-```bash
-yarn add vanilla-headless
-```
-
-### Import
-
-```typescript
-import "vanilla-headless"
-```
-<blockquote style="background-color: #2dd4bf; color: #134e4a; border-left-color: #134e4a; border-left-width: 5px; 
-border-radius: 3px;">
-<small style="font-size: 12px; font-style: italic">
-That's all, no other javascript required. Just wrap you aria compliant markup with the appropriate tag.
-</small>
-</blockquote>  
-
-
-
-
-## Web Components
-
-- [popover](#popover-with-aria-keyboard-navigation)
-- [dropdown menu](#dropdown-with-aria-keyboard-navigation)
-- [disclosure](#disclosure-with-aria-keyboard-navigation)
-
-### Popover with aria keyboard navigation
-
-#### Requirements:
-
-- Button:
-  - must be typeof ``button``
-  - must have attributes of ``aria-haspopup`` and ``aria-expanded``
-  - ``ID`` must have same value as dropdown labelledby
-- Dropdown
-  - must have attributes of ``aria-labelledby``
-
-![](./img/popover.gif)
-
-```html
-<!-- require tailwindcss for example -->
-<headless-popover class="relative" offsets="0 10" placement="bottom-end bottom" popper>
+<headless-popover class="relative block max-w-[200px]" offsets="0 10" placement="bottom-start bottom-end" popper>
   <button
     aria-expanded="true"
     aria-haspopup="true"
-    class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-sky-500"
+    class="inline-flex justify-between  w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-sky-500"
     id="popover"
     type="button"
   >
@@ -165,25 +106,8 @@ That's all, no other javascript required. Just wrap you aria compliant markup wi
     </div>
   </div>
 </headless-popover>
-```
 
-### Dropdown with aria keyboard navigation
-
-#### Requirements:
-
-- Button:
-  - must be typeof ``button``
-  - must have attributes of ``aria-haspopup`` and ``aria-expanded``
-  - ``ID`` must have same value as dropdown ``labelledby``
-- Dropdown
-  - must have attributes of ``aria-labelledby``
-  - dropdown require at least 1 anchor or button tag with attribute `role="menuitem"`
-
-![](./img/dropdown.gif)
-
-```html
-<!-- require tailwindcss for example -->
-<headless-dropdown class="relative inline-block text-left" placement="bottom-end bottom" popper>
+<headless-dropdown class="relative inline-block text-left" placement="bottom-end bottom-start" popper>
   <div>
     <button
       aria-expanded="true"
@@ -231,23 +155,8 @@ That's all, no other javascript required. Just wrap you aria compliant markup wi
     </div>
   </div>
 </headless-dropdown>
-```
 
-### Disclosure with aria keyboard navigation
-
-#### Requirements:
-
-- Button:
-  - must be typeof ``button``
-  - must have attributes of `aria-controls` and `aria-expanded`
-- Dropdown
-  - must have a `ID` matching `aria-controls`
-
-![](./img/discosure.gif)
-
-```html
-<!-- require tailwindcss for example -->
-<headless-disclosure class="mx-auto w-full max-w-md rounded-md bg-white p-2">
+<headless-disclosure class="max-w-md block rounded-md bg-white p-2">
   <dl class="faq">
     <dt>
       <button
@@ -315,27 +224,8 @@ That's all, no other javascript required. Just wrap you aria compliant markup wi
     </dd>
   </dl>
 </headless-disclosure>
-```
 
-### PopperJs
+<script src="build/index.js"></script>
 
-PopperJs is already bundle in and only require a attribute of `popper` to work.
-
-#### Optional
-
-- Popper.js
-  - <u>**Required:**</u> Add attribute of `popper` or `popper="true"` to enable popper.js
-  - Change placement with attribute `placement="bottom-end bottom-start"`
-  - Change offset with attribute `offset="0 20"`
-
-#### Use with PopperJs
-
-<small><i>Attribute can be seperated by comma or empty space</i></small>
-
-```html
-
-<headless-dropdown popper placement="bottom-end bottom-start" ....
-<headless-dropdown popper="true" placement="bottom-end,bottom-start" ....
-<headless-dropdown popper offset="0 20" ....
-<headless-dropdown popper="true" offset="0,20" ....
-```
+</body>
+</html>
