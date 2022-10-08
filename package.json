@@ -1,6 +1,6 @@
 {
   "name": "vanilla-headless",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "build/index.js",
   "description": "Inspired by HeadlessUi, Vanilla Headless is Web Component library that adds interactive with keyboard and mouse events",
   "repository": "https://github.com/DesignByCode/vanilla-headless",
