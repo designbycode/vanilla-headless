@@ -11,13 +11,13 @@
 ![](./img/git-banner.jpg)
 
 - [Install](#install)
-- [Import](#import)
+- [Use](#use)
 - [Web Components](#web-components)
   - [Popover](#popover-with-aria-keyboard-navigation)
   - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
   - [Disclosure](#disclosure-with-aria-keyboard-navigation)
-  - [Mobile Navigation]()
-- [Directives]()
+  - [Mobile Navigation](#navigation-with-aria-keyboard-interactions)
+- [Directives](#directives)
   - [Scroll to top](#scrolltop-with-aria-keyboard-interactions)
 - [Use with PopperJs](#popperjs)
 
@@ -34,15 +34,16 @@ yarn add vanilla-headless
 https://unpkg.com/vanilla-headless@latest
 ```
 
-### Import
+### Use 
 
 ```typescript
 import "vanilla-headless"
 ```
 
-<blockquote> 
-That's all, no other javascript required. Just wrap you aria compliant markup with the appropriate tag.
-</blockquote>  
+> That's all, no other javascript required. Just wrap you aria compliant markup with the appropriate tag and attributes.
+
+> The **example** files is using [TailwindCSS](https://tailwindcss.com/) but is not required with [TailwindUI](https://tailwindui.com/)
+
 
 ## Web Components
 The web component is basically a wrapper around your semantic html. At it's most basic it will even work without any 
@@ -51,6 +52,7 @@ css.
 - [popover](#popover-with-aria-keyboard-navigation)
 - [dropdown menu](#dropdown-with-aria-keyboard-navigation)
 - [disclosure](#disclosure-with-aria-keyboard-navigation)
+- [navigation](#navigation-with-aria-keyboard-interactions)
 
 ### Popover with aria keyboard navigation
 The popover element makes it easy to show and hide html elements on page. This work great for dropdown, menus and 
