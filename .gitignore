@@ -286,3 +286,4 @@ fabric.properties
 dist/
 build
 index.html
+mix-manifest.json

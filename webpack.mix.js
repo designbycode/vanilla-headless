@@ -1,2 +1,2 @@
 const mix = require("laravel-mix")
-mix.js("./dist/index.js", "./build/index.js")
+mix.js("./dist/index.js", "./build/index.js").disableSuccessNotifications()

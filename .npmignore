@@ -2,3 +2,16 @@
 .idea*
 /img*
 index.html
+mix-manifest.json
+.babelrc.json
+.eslintrc.json
+.gitignore
+/src*
+/test*
+.prettierrc
+babel.config.json
+gulpfile.js
+postcss-config.json
+tailwindcss.config.js
+tsconfig.json
+webpack.mix.js
