@@ -41,11 +41,7 @@ import "vanilla-headless"
 ```
 
 <blockquote> 
-<sub>
-<sup>
 That's all, no other javascript required. Just wrap you aria compliant markup with the appropriate tag.
-</sup>
-</sub>
 </blockquote>  
 
 ## Web Components
