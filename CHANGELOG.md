@@ -2,7 +2,7 @@
 
 ## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.2.0...HEAD)
 
-## [v0.1.6](https://github.com/designbycode/vanilla-headless/compare/v0.1.5...v0.2.0) - 2022-10-9
+## [v0.2.0](https://github.com/designbycode/vanilla-headless/compare/v0.1.5...v0.2.0) - 2022-10-9
 
 ### Added
 - Navigation: Added mobile button toggle functionality for menu.
