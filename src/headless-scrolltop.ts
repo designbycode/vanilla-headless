@@ -1,5 +1,4 @@
 import { keycodeEquals } from "./utils"
-
 /**
  * Class for ScrollToTop
  * @class
@@ -12,6 +11,7 @@ export class HeadlessScrollTop extends HTMLButtonElement {
     super()
     this.#displayProperty = "none"
     this.hiddenAttribute = true
+    this.setAttribute("aria-pressed", "false")
   }
 
   /**
@@ -44,8 +44,13 @@ export class HeadlessScrollTop extends HTMLButtonElement {
 
   connectedCallback() {
     this.addEventListener("click", this.scrollTopAnimation.bind(this))
+    this.addEventListener("mousedown", this.buttonPressEvents.bind(this))
+    this.addEventListener("mouseup", this.buttonPressEvents.bind(this))
+    this.addEventListener("keydown", this.scrollUpOnKeyDown.bind(this))
+    this.addEventListener("keydown", this.buttonPressEvents.bind(this))
+    this.addEventListener("keyup", this.buttonPressEvents.bind(this))
     window.addEventListener("scroll", this.hideButtonOnScroll.bind(this))
-    window.addEventListener("keydown", this.keyBoardEvent.bind(this))
+    window.addEventListener("keydown", this.scrollUpOnCtrlHome.bind(this))
     this.#displayProperty = window.getComputedStyle(this).display
     if (this.hiddenAttribute) {
       this.style.display = "none"
@@ -54,8 +59,23 @@ export class HeadlessScrollTop extends HTMLButtonElement {
 
   disconnectedCallback() {
     this.removeEventListener("click", this.scrollTopAnimation)
-    window.addEventListener("scroll", this.hideButtonOnScroll)
-    window.removeEventListener("keydown", this.keyBoardEvent)
+    this.removeEventListener("mousedown", this.buttonPressEvents)
+    this.removeEventListener("mouseup", this.buttonPressEvents)
+    this.removeEventListener("keydown", this.scrollUpOnKeyDown)
+    this.removeEventListener("keydown", this.buttonPressEvents)
+    this.removeEventListener("keyup", this.buttonPressEvents)
+    window.removeEventListener("scroll", this.hideButtonOnScroll)
+    window.removeEventListener("keydown", this.scrollUpOnCtrlHome)
+  }
+
+  private buttonPressEvents(event: KeyboardEvent | MouseEvent): void {
+    if (event.type === "keydown" || event.type === "mousedown") {
+      this.setAttribute("aria-pressed", "true")
+    }
+
+    if (event.type === "keyup" || event.type === "mouseup") {
+      this.setAttribute("aria-pressed", "false")
+    }
   }
 
   /**
@@ -69,8 +89,19 @@ export class HeadlessScrollTop extends HTMLButtonElement {
    * Scroll to top by pressing control + Home key
    * @return void
    * */
-  private keyBoardEvent(event: KeyboardEvent): void {
-    if ((event.ctrlKey && keycodeEquals(["Home"], event)) || keycodeEquals(["Space", "Enter"], event)) {
+  private scrollUpOnCtrlHome(event: KeyboardEvent): void {
+    if (event.ctrlKey && keycodeEquals(["Home"], event)) {
+      event.preventDefault()
+      this.scrollTopAnimation()
+    }
+  }
+
+  /**
+   * Scroll to top by pressing Space or Enter white focus is on button
+   * @return void
+   * */
+  private scrollUpOnKeyDown(event: KeyboardEvent): void {
+    if (keycodeEquals(["Space", "Enter"], event)) {
       event.preventDefault()
       this.scrollTopAnimation()
     }
@@ -84,6 +115,7 @@ export class HeadlessScrollTop extends HTMLButtonElement {
     if (document.documentElement.scrollTop < this.scrollOffset) {
       this.hiddenAttribute = true
       this.style.display = "none"
+      this.setAttribute("aria-pressed", "false")
     } else {
       this.hiddenAttribute = false
       this.style.display = this.#displayProperty

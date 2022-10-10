@@ -19,9 +19,9 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Popper.js placement of htmlElement with attribute of aria-labelledby
-   * @return string
+   * @return string[]
    * */
-  protected get placement(): any {
+  protected get placement(): string[] {
     return this.getAttribute("placement")?.split(/(?:,| )+/g)
   }
 
