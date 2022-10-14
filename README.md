@@ -17,6 +17,7 @@
     - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
     - [Disclosure](#disclosure-with-aria-keyboard-navigation)
     - [Mobile Navigation](#navigation-with-aria-keyboard-interactions)
+    - [Dark Mode Button](#dark-mode-toggle-button-with-keyboard-interactions)
 - [Directives](#directives)
     - [Scroll to top](#scrolltop-with-aria-keyboard-interactions)
 - [Use with PopperJs](#popperjs)
@@ -55,6 +56,7 @@ css.
 - [dropdown menu](#dropdown-with-aria-keyboard-navigation)
 - [disclosure](#disclosure-with-aria-keyboard-navigation)
 - [navigation](#navigation-with-aria-keyboard-interactions)
+- [darkmode](#dark-mode-toggle-button-with-keyboard-interactions)
 
 ### Popover with aria keyboard navigation
 
