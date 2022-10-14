@@ -1,10 +1,15 @@
 import HeadlessUi from "./headless-ui"
 import { keycodeEquals } from "./utils"
-
 /**
  * Class for navigation
  * @class
  * @augments HeadlessUi
+ * @link constructor
+ * @link checkRequirements
+ * @link addEventListeners
+ * @link removeEventListeners
+ * @link buttonKeyEvent
+ * @link closeOnResize
  * */
 class HeadlessNavigation extends HeadlessUi {
   protected declare readonly button: HTMLButtonElement | null
@@ -67,4 +72,4 @@ class HeadlessNavigation extends HeadlessUi {
   }
 }
 
-customElements.define("headless-navigation", HeadlessNavigation)
+customElements.define("headless-navigation", HeadlessNavigation);

@@ -3,6 +3,17 @@ import { keycodeEquals } from "./utils"
  * Class for ScrollToTop
  * @class
  * @augments HTMLButtonElement
+ * @link constructor
+ * @link {offset} getter
+ * @link {scrollOffset} getter
+ * @link {hiddenAttribute} getter setter
+ * @link connectedCallback
+ * @link disconnectedCallback
+ * @link buttonPressEvents
+ * @link scrollTopAnimation
+ * @link scrollUpOnCtrlHome
+ * @link scrollUpOnKeyDown
+ * @link hideButtonOnScroll
  * */
 export class HeadlessScrollTop extends HTMLButtonElement {
   #displayProperty: string

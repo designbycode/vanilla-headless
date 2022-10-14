@@ -4,6 +4,25 @@ import { createPopper, Placement } from "@popperjs/core"
 /**
  * Abstract class for element that use popups
  * @class
+ * @link constructor
+ * @link placement getter setter
+ * @link offsets
+ * @link expanded
+ * @link hiddenAttribute
+ * @link isDisabled
+ * @link popper
+ * @link connectedCallback
+ * @link disconnectedCallback
+ * @link checkRequirements
+ * @link addEventListeners
+ * @link removeEventListeners
+ * @link popperInit
+ * @link open
+ * @link close
+ * @link toggleOpen
+ * @link buttonKeyEvent
+ * @link closeOnClickOutSide
+ * @link closeOnExitKeyDown
  * */
 export default class HeadlessUi extends HTMLElement {
   protected readonly button: HTMLButtonElement | null

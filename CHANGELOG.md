@@ -1,7 +1,14 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.2.2...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.2.3...HEAD)
 Unreleased
+
+## [v0.2.2](https://github.com/designbycode/vanilla-headless/compare/v0.2.1...v0.2.2) - 2022-10-14
+### Added
+- Rating: added rating component 
+
+### Changes
+- 
 
 ## [v0.2.2](https://github.com/designbycode/vanilla-headless/compare/v0.2.1...v0.2.2) - 2022-10-10
 ### Fixed

@@ -5,6 +5,17 @@ import { keycodeEquals } from "./utils"
  * Class for dropdown menus
  * @class
  * @augments HeadlessUi
+ * @link constructor
+ * @link current
+ * @link addEventListeners
+ * @link removeEventListeners
+ * @link buttonKeyEvent
+ * @link close
+ * @link itemsKeyEvent
+ * @link navigateKeys
+ * @link itemClickEvent
+ * @link markAsCurrent
+ * @link focusOnElement
  * */
 class HeadlessDropdown extends HeadlessUi {
   private readonly menuItems: NodeListOf<HTMLElement>

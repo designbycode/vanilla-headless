@@ -2,6 +2,14 @@
  * Class for disclosure
  * @class
  * @augments HTMLElement
+ * @link constructor
+ * @link connectedCallback
+ * @link disconnectedCallback
+ * @link childSection
+ * @link changeHidden
+ * @link hideContent
+ * @link toggleVisibility
+ * @since 0.1.4
  * */
 export class HeadlessDisclosure extends HTMLElement {
   private buttons: NodeListOf<HTMLButtonElement> | null
@@ -48,6 +56,7 @@ export class HeadlessDisclosure extends HTMLElement {
    * */
   private hideContent(): void {
     this.buttons?.forEach((button) => {
+
       if (button.getAttribute("aria-expanded") === "false") {
         const section = this.childSection(button) as HTMLElement | null
         this.changeHidden(section, true)
