@@ -10,6 +10,7 @@ import { keycodeEquals } from "./utils"
  * @link removeEventListeners
  * @link buttonKeyEvent
  * @link closeOnResize
+ * @since 0.1.4
  * */
 class HeadlessNavigation extends HeadlessUi {
   protected declare readonly button: HTMLButtonElement | null

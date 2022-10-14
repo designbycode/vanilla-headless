@@ -1,6 +1,5 @@
 import HeadlessUi from "./headless-ui"
 import { keycodeEquals } from "./utils"
-
 /**
  * Class for dropdown menus
  * @class
@@ -16,6 +15,7 @@ import { keycodeEquals } from "./utils"
  * @link itemClickEvent
  * @link markAsCurrent
  * @link focusOnElement
+ * @since 0.1.4
  * */
 class HeadlessDropdown extends HeadlessUi {
   private readonly menuItems: NodeListOf<HTMLElement>

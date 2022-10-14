@@ -13,12 +13,12 @@
 - [Install](#install)
 - [Use](#use)
 - [Web Components](#web-components)
-  - [Popover](#popover-with-aria-keyboard-navigation)
-  - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
-  - [Disclosure](#disclosure-with-aria-keyboard-navigation)
-  - [Mobile Navigation](#navigation-with-aria-keyboard-interactions)
+    - [Popover](#popover-with-aria-keyboard-navigation)
+    - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
+    - [Disclosure](#disclosure-with-aria-keyboard-navigation)
+    - [Mobile Navigation](#navigation-with-aria-keyboard-interactions)
 - [Directives](#directives)
-  - [Scroll to top](#scrolltop-with-aria-keyboard-interactions)
+    - [Scroll to top](#scrolltop-with-aria-keyboard-interactions)
 - [Use with PopperJs](#popperjs)
 
 ### Install
@@ -43,7 +43,8 @@ import "vanilla-headless"
 
 > That's all, no other javascript required. Just wrap you aria compliant markup with the appropriate tag and attributes.
 
-> The **example** files is using [TailwindCSS](https://tailwindcss.com/) but is not required with [TailwindUI](https://tailwindui.com/)
+> The **example** files is using [TailwindCSS](https://tailwindcss.com/) but is not required
+> with [TailwindUI](https://tailwindui.com/)
 
 ## Web Components
 
@@ -72,11 +73,11 @@ popover.
 #### Requirements:
 
 - Button:
-  - must be typeof `button`
-  - must have attributes of `aria-haspopup` and `aria-expanded`
-  - `ID` must have same value as dropdown labelledby
+    - must be typeof `button`
+    - must have attributes of `aria-haspopup` and `aria-expanded`
+    - `ID` must have same value as dropdown labelledby
 - Dropdown
-  - must have attributes of `aria-labelledby`
+    - must have attributes of `aria-labelledby`
 
 ```html
 <!-- require tailwindcss for example -->
@@ -90,8 +91,11 @@ popover.
   >
     Popover
     <!-- Heroicon name: solid/chevron-down -->
-    <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd" />
+    <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20"
+         xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            fill-rule="evenodd" />
     </svg>
   </button>
   <div aria-labelledby="popover" class="absolute z-10 w-screen max-w-sm  transform px-4 sm:px-0">
@@ -102,9 +106,11 @@ popover.
           href="#"
         >
           <span>
-            <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48"
+                 xmlns="http://www.w3.org/2000/svg">
               <rect fill="#e0f2fe" height="48" rx="8" width="48"></rect>
-              <path d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z" stroke="#0ea5e9" stroke-width="2"></path>
+              <path d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z" stroke="#0ea5e9"
+                    stroke-width="2"></path>
               <path
                 clip-rule="evenodd"
                 d="M16.7417 19.8094V28.1906L24 32.3812L31.2584 28.1906V19.8094L24 15.6188L16.7417 19.8094Z"
@@ -128,9 +134,11 @@ popover.
           href="#"
         >
           <span>
-            <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48"
+                 xmlns="http://www.w3.org/2000/svg">
               <rect fill="#e0f2fe" height="48" rx="8" width="48"></rect>
-              <path d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z" stroke="#0ea5e9" stroke-width="2"></path>
+              <path d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z" stroke="#0ea5e9"
+                    stroke-width="2"></path>
               <path
                 clip-rule="evenodd"
                 d="M16.7417 19.8094V28.1906L24 32.3812L31.2584 28.1906V19.8094L24 15.6188L16.7417 19.8094Z"
@@ -154,9 +162,11 @@ popover.
           href="#"
         >
           <span>
-            <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48"
+                 xmlns="http://www.w3.org/2000/svg">
               <rect fill="#e0f2fe" height="48" rx="8" width="48"></rect>
-              <path d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z" stroke="#0ea5e9" stroke-width="2"></path>
+              <path d="M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z" stroke="#0ea5e9"
+                    stroke-width="2"></path>
               <path
                 clip-rule="evenodd"
                 d="M16.7417 19.8094V28.1906L24 32.3812L31.2584 28.1906V19.8094L24 15.6188L16.7417 19.8094Z"
@@ -199,12 +209,12 @@ functionality to navigate menu elements via keyboard and adding `aria-current` a
 #### Requirements:
 
 - Button:
-  - must be typeof `button`
-  - must have attributes of `aria-haspopup` and `aria-expanded`
-  - `ID` must have same value as dropdown `labelledby`
+    - must be typeof `button`
+    - must have attributes of `aria-haspopup` and `aria-expanded`
+    - `ID` must have same value as dropdown `labelledby`
 - Dropdown
-  - must have attributes of `aria-labelledby`
-  - dropdown require at least 1 anchor or button tag with attribute `role="menuitem"`
+    - must have attributes of `aria-labelledby`
+    - dropdown require at least 1 anchor or button tag with attribute `role="menuitem"`
 
 ```html
 <!-- require tailwindcss for example -->
@@ -219,8 +229,11 @@ functionality to navigate menu elements via keyboard and adding `aria-current` a
     >
       Dropdown
       <!-- Heroicon name: solid/chevron-down -->
-      <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path clip-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" fill-rule="evenodd" />
+      <svg aria-hidden="true" class="-mr-1 ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20"
+           xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              fill-rule="evenodd" />
       </svg>
     </button>
   </div>
@@ -233,14 +246,17 @@ functionality to navigate menu elements via keyboard and adding `aria-current` a
     tabindex="-1"
   >
     <div class="py-1" role="none">
-      <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none" href="#account" id="menu-item-0" role="menuitem" tabindex="-1"
-        >Account settings</a
+      <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+         href="#account" id="menu-item-0" role="menuitem" tabindex="-1"
+      >Account settings</a
       >
-      <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none" href="#support" id="menu-item-1" role="menuitem" tabindex="-1"
-        >Support</a
+      <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+         href="#support" id="menu-item-1" role="menuitem" tabindex="-1"
+      >Support</a
       >
-      <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none" href="#license" id="menu-item-2" role="menuitem" tabindex="-1"
-        >License</a
+      <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+         href="#license" id="menu-item-2" role="menuitem" tabindex="-1"
+      >License</a
       >
       <form action="#test" method="POST" role="none">
         <button
@@ -273,10 +289,10 @@ The Disclosure element is ideal for hide and showing a list of elements. Best us
 #### Requirements:
 
 - Button:
-  - must be typeof `button`
-  - must have attributes of `aria-controls` and `aria-expanded`
+    - must be typeof `button`
+    - must have attributes of `aria-controls` and `aria-expanded`
 - Dropdown
-  - must have a `ID` matching `aria-controls`
+    - must have a `ID` matching `aria-controls`
 
 ```html
 <!-- require tailwindcss for example -->
@@ -294,7 +310,8 @@ The Disclosure element is ideal for hide and showing a list of elements. Best us
     </dt>
     <dd>
       <div class="px-4 pt-4 pb-2 text-sm text-gray-500" id="faq1_desc">
-        Park at the nearest available parking meter without paying the meter and call 999-999-9999 to report the problem. We will note and approve your alternate location and will
+        Park at the nearest available parking meter without paying the meter and call 999-999-9999 to report the
+        problem. We will note and approve your alternate location and will
         investigate the cause of the shortage in your assigned facility.
       </div>
     </dd>
@@ -310,7 +327,8 @@ The Disclosure element is ideal for hide and showing a list of elements. Best us
     </dt>
     <dd>
       <div class="px-4 pt-4 pb-2 text-sm text-gray-500" id="faq2_desc">
-        You should come to the Parking office and report the loss. There is a fee to replace your lost permit. However, if your permit was stolen, a copy of a police report needs
+        You should come to the Parking office and report the loss. There is a fee to replace your lost permit. However,
+        if your permit was stolen, a copy of a police report needs
         to be submitted along with a stolen parking permit form for a fee replacement exemption.
       </div>
     </dd>
@@ -326,9 +344,11 @@ The Disclosure element is ideal for hide and showing a list of elements. Best us
     </dt>
     <dd>
       <div class="px-4 pt-4 pb-2 text-sm text-gray-500" id="faq3_desc">
-        All facilities are restricted from 2:00 am - 6:00 am on all days. No exceptions are made for any holiday or recess except those officially listed as a
+        All facilities are restricted from 2:00 am - 6:00 am on all days. No exceptions are made for any holiday or
+        recess except those officially listed as a
         <q> Holidays </q>
-        in the calendar. Please note: 24-hour rental spaces, 24-hour rental lots, and disabled parking is enforced at all times.
+        in the calendar. Please note: 24-hour rental spaces, 24-hour rental lots, and disabled parking is enforced at
+        all times.
       </div>
     </dd>
     <dt>
@@ -367,19 +387,21 @@ and the section you want to hide and show.
 #### Requirements:
 
 - Button:
-  - must be typeof `button`
-  - must add an attribute of `aria-expanded` `aria-controls`
+    - must be typeof `button`
+    - must add an attribute of `aria-expanded` `aria-controls`
 - Mobile Menu
-  - must have a html element with an `id` matching `aria-controls`
+    - must have a html element with an `id` matching `aria-controls`
 
 ```html
+
 <headless-navigation class="relative bg-white mb-4  z-50  shadow w-full rounded-md">
   <div class="container mx-auto px-4 sm:px-6">
     <div class="flex justify-between items-center py-3 md:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a class="flex-shrink-0 flex items-center" href="#">
           <span class="sr-only">Vanilla Headless</span>
-          <img alt="vanilla headless" class="block lg:hidden h-8 w-auto" src="https://raw.githubusercontent.com/DesignByCode/vanilla-headless/main/img/vh.svg" />
+          <img alt="vanilla headless" class="block lg:hidden h-8 w-auto"
+               src="https://raw.githubusercontent.com/DesignByCode/vanilla-headless/main/img/vh.svg" />
         </a>
       </div>
       <div class="-mr-2 -my-2 md:hidden">
@@ -391,7 +413,8 @@ and the section you want to hide and show.
         >
           <span class="sr-only">Open menu</span>
           <!-- Heroicon name: outline/menu -->
-          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
             <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
           </svg>
         </button>
@@ -407,7 +430,8 @@ and the section you want to hide and show.
           >
             <span>Solutions</span>
 
-            <svg aria-hidden="true" class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" fill="currentColor"
+                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 clip-rule="evenodd"
                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -425,7 +449,8 @@ and the section you want to hide and show.
               <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/chart-bar -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                       stroke-linecap="round"
@@ -441,7 +466,8 @@ and the section you want to hide and show.
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/cursor-click -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
                       stroke-linecap="round"
@@ -451,13 +477,15 @@ and the section you want to hide and show.
                   </svg>
                   <span class="ml-4">
                     <span class="text-base font-medium text-gray-900">Engagement</span>
-                    <span class="mt-1 text-sm text-gray-500">Speak directly to your customers in a more meaningful way.</span>
+                    <span
+                      class="mt-1 text-sm text-gray-500">Speak directly to your customers in a more meaningful way.</span>
                   </span>
                 </a>
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/shield-check -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                       stroke-linecap="round"
@@ -473,7 +501,8 @@ and the section you want to hide and show.
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/view-grid -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                       stroke-linecap="round"
@@ -489,7 +518,8 @@ and the section you want to hide and show.
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/refresh -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                       stroke-linecap="round"
@@ -505,25 +535,30 @@ and the section you want to hide and show.
               </div>
               <div class="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                 <div class="flow-root">
-                  <a class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100" href="#">
+                  <a class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
+                     href="#">
                     <!-- Heroicon name: outline/play -->
-                    <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-gray-400" fill="none"
+                         stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
                       />
-                      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" />
                     </svg>
                     <span class="ml-3">Watch Demo</span>
                   </a>
                 </div>
 
                 <div class="flow-root">
-                  <a class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100" href="#">
+                  <a class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
+                     href="#">
                     <!-- Heroicon name: outline/phone -->
-                    <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-gray-400" fill="none"
+                         stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                         stroke-linecap="round"
@@ -553,7 +588,8 @@ and the section you want to hide and show.
           >
             <span>More</span>
 
-            <svg aria-hidden="true" class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" fill="currentColor"
+                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 clip-rule="evenodd"
                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -573,7 +609,8 @@ and the section you want to hide and show.
               <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/support -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
                       stroke-linecap="round"
@@ -589,7 +626,8 @@ and the section you want to hide and show.
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/bookmark-alt -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                       stroke-linecap="round"
@@ -605,7 +643,8 @@ and the section you want to hide and show.
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/calendar -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       stroke-linecap="round"
@@ -621,7 +660,8 @@ and the section you want to hide and show.
 
                 <a class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50" href="#" role="menuitem">
                   <!-- Heroicon name: outline/shield-check -->
-                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                       stroke-linecap="round"
@@ -644,16 +684,19 @@ and the section you want to hide and show.
                     </li>
 
                     <li class="text-base truncate">
-                      <a class="font-medium text-gray-900 hover:text-gray-700" href="#"> How to use search engine optimization to drive traffic to your site </a>
+                      <a class="font-medium text-gray-900 hover:text-gray-700" href="#"> How to use search engine
+                        optimization to drive traffic to your site </a>
                     </li>
 
                     <li class="text-base truncate">
-                      <a class="font-medium text-gray-900 hover:text-gray-700" href="#"> Improve your customer experience </a>
+                      <a class="font-medium text-gray-900 hover:text-gray-700" href="#"> Improve your customer
+                        experience </a>
                     </li>
                   </ul>
                 </div>
                 <div class="mt-5 text-sm">
-                  <a class="font-medium text-amber-600 hover:text-amber-500" href="#"> View all posts <span aria-hidden="true">&rarr;</span></a>
+                  <a class="font-medium text-amber-600 hover:text-amber-500" href="#"> View all posts <span
+                    aria-hidden="true">&rarr;</span></a>
                 </div>
               </div>
             </div>
@@ -679,7 +722,8 @@ and the section you want to hide and show.
           <nav class="grid gap-y-8">
             <a class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" href="#">
               <!-- Heroicon name: outline/chart-bar -->
-              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                   stroke-linecap="round"
@@ -692,7 +736,8 @@ and the section you want to hide and show.
 
             <a class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" href="#">
               <!-- Heroicon name: outline/cursor-click -->
-              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
                   stroke-linecap="round"
@@ -705,7 +750,8 @@ and the section you want to hide and show.
 
             <a class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" href="#">
               <!-- Heroicon name: outline/shield-check -->
-              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   stroke-linecap="round"
@@ -718,7 +764,8 @@ and the section you want to hide and show.
 
             <a class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" href="#">
               <!-- Heroicon name: outline/view-grid -->
-              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
                   stroke-linecap="round"
@@ -731,7 +778,8 @@ and the section you want to hide and show.
 
             <a class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" href="#">
               <!-- Heroicon name: outline/refresh -->
-              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" class="flex-shrink-0 h-6 w-6 text-amber-600" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                   stroke-linecap="round"
@@ -776,6 +824,38 @@ and the section you want to hide and show.
 </headless-navigation>
 ```
 
+### Dark Mode Toggle button with keyboard interactions
+
+The dark mode component will toggle between dark and light and save the result to localStorage.
+
+![](./img/darkmode.gif)
+
+#### Events:
+
+- Toggle theme button with mouse click events.
+- Toggle theme button pressing down on Enter and Space keys.
+- Adds a ``data-theme`` to root component
+
+#### Requirements:
+
+- Button:
+    - must be typeof `button`
+
+```html
+
+<headless-darkmode class="inline-flex">
+  <button type="button"
+          class="px-4 py-2 flex justify-center space-x-2 inline-block rounded-md dark:bg-white dark:text-gray-600  bg-gray-700 text-gray-100 shadow-md">
+    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="currentColor"
+            d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
+    </svg>
+    <span>Dark Mode</span>
+  </button>
+</headless-darkmode>
+
+```
+
 ## Directives
 
 Directives are markers on a DOM element to attach a specified behavior to that DOM element.
@@ -799,10 +879,11 @@ attribute of `is="headless-scrolltop"` and that is it.
 #### Requirements:
 
 - Button:
-  - must be typeof `button`
-  - must add an attribute of `is="headless-scrolltop"`
+    - must be typeof `button`
+    - must add an attribute of `is="headless-scrolltop"`
 
 ```html
+
 <button type="button" is="headless-scrolltop">Scroll to top</button>
 ```
 
@@ -813,9 +894,9 @@ PopperJs is already bundle in and only require a attribute of `popper` to work.
 #### Optional
 
 - Popper.js
-  - <u>**Required:**</u> Add attribute of `popper` or `popper="true"` to enable popper.js
-  - Change placement with attribute `placement="bottom-end bottom-start"`
-  - Change offset with attribute `offset="0 20"`
+    - <u>**Required:**</u> Add attribute of `popper` or `popper="true"` to enable popper.js
+    - Change placement with attribute `placement="bottom-end bottom-start"`
+    - Change offset with attribute `offset="0 20"`
 
 #### Use with PopperJs
 

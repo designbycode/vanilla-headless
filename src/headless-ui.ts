@@ -1,6 +1,5 @@
 import { keycodeEquals } from "./utils"
 import { createPopper, Placement } from "@popperjs/core"
-
 /**
  * Abstract class for element that use popups
  * @class

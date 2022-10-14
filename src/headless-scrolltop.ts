@@ -14,6 +14,7 @@ import { keycodeEquals } from "./utils"
  * @link scrollUpOnCtrlHome
  * @link scrollUpOnKeyDown
  * @link hideButtonOnScroll
+ * @since 0.2.1
  * */
 export class HeadlessScrollTop extends HTMLButtonElement {
   #displayProperty: string

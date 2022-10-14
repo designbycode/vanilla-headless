@@ -1,14 +1,15 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.2.3...HEAD)
-Unreleased
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.2.2...HEAD)
+- Unreleased
 
-## [v0.2.2](https://github.com/designbycode/vanilla-headless/compare/v0.2.1...v0.2.2) - 2022-10-14
+## [v0.3.0](https://github.com/designbycode/vanilla-headless/compare/v0.2.2...v0.3.0) - 2022-10-14
 ### Added
 - Rating: added rating component 
+- Darkmode: added dark mode web component
 
 ### Changes
-- 
+- Disclosure: switch to attributes to use aria-mixin api
 
 ## [v0.2.2](https://github.com/designbycode/vanilla-headless/compare/v0.2.1...v0.2.2) - 2022-10-10
 ### Fixed

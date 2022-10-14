@@ -56,7 +56,6 @@ export class HeadlessDisclosure extends HTMLElement {
    * */
   private hideContent(): void {
     this.buttons?.forEach((button) => {
-
       if (button.getAttribute("aria-expanded") === "false") {
         const section = this.childSection(button) as HTMLElement | null
         this.changeHidden(section, true)
