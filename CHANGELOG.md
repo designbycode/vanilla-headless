@@ -3,7 +3,7 @@
 ## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.2.2...HEAD)
 - Unreleased
 
-## [v0.3.0](https://github.com/designbycode/vanilla-headless/compare/v0.2.2...v0.3.0) - 2022-10-14
+## [v0.3.1](https://github.com/designbycode/vanilla-headless/compare/v0.2.2...v0.3.1) - 2022-10-14
 ### Added
 - Rating: added rating component 
 - Darkmode: added dark mode web component

@@ -18,7 +18,7 @@ import { keycodeEquals } from "./utils";
  * @link setCheckedToPreviousItem
  * @link handleClick
  * @link handleKeydown
- * @since 0.2.3
+ * @since 0.3.1
  * */
 export class HeadlessRating extends HTMLElement {
   private readonly radioButtons: NodeListOf<HTMLElement>

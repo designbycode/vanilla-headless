@@ -10,7 +10,7 @@ import { keycodeEquals } from "./utils";
  * @link toggleTheme
  * @link toggleThemeWithKeyboard
  * @link themeData
- * @since 0.2.4
+ * @since 0.3.1
  * */
 export class HeadlessDarkMode extends HTMLElement {
   private button: HTMLButtonElement | HTMLElement | null;
