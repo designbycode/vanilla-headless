@@ -19,7 +19,8 @@
     - [Mobile Navigation](#navigation-with-aria-keyboard-interactions)
     - [Dark Mode Button](#dark-mode-toggle-button-with-keyboard-interactions)
 - [Directives](#directives)
-    - [Scroll to top](#scrolltop-with-aria-keyboard-interactions)
+    - [ScrollTop](#scrolltop-with-aria-keyboard-interactions)
+    - [GoBack](#goback-with-aria-keyboard-interactions)
 - [Use with PopperJs](#popperjs)
 
 ### Install
@@ -863,6 +864,7 @@ The dark mode component will toggle between dark and light and save the result t
 Directives are markers on a DOM element to attach a specified behavior to that DOM element.
 
 - [ScrollTop](#scrolltop-with-aria-keyboard-interactions)
+- [GoBack](#goback-with-aria-keyboard-interactions)
 
 ### ScrollTop with aria keyboard interactions
 
@@ -885,13 +887,26 @@ attribute of `is="headless-scrolltop"` and that is it.
     - must add an attribute of `is="headless-scrolltop"`
 
 ```html
-
 <button type="button" is="headless-scrolltop">Scroll to top</button>
+```
+
+### GoBack with aria keyboard interactions
+The ``headless-goback`` directive allow you to turn a button into go to previous page button using window.history 
+and adding the necessary aria indicators and events
+
+#### Events:
+- Trigger element on mouse click event
+- Trigger element on keyboard event, when using Space or Enter
+- Automatically set aria-pressed to true and false  
+
+```html
+<button type="button" is="headless-goback">Go Back</button>
 ```
 
 ### PopperJs
 
-PopperJs is already bundle in and only require a attribute of `popper` to work.
+PopperJs is already bundle in and only require an attribute of `popper` to work. PopperJs only works on Popover, 
+DropDown and Navigation component.
 
 #### Optional
 
