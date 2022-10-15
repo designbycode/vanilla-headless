@@ -1,9 +1,9 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.3.2...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.4.0...HEAD)
 - Unreleased
 
-## [v0.3.2](https://github.com/designbycode/vanilla-headless/compare/v0.3.1...v0.3.2) - 2022-10-15
+## [v0.4.0](https://github.com/designbycode/vanilla-headless/compare/v0.3.1...v0.4.0) - 2022-10-15
 ### Added
 - Added abstract HeadlessButton class to handle aria-pressed attribute
 - GoBack: added ``headless-goback`` directive that implements HeadlessButton

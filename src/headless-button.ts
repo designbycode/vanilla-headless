@@ -9,7 +9,7 @@
  * @link addEventListeners
  * @link removeEventListeners
  * @link buttonPressEvents
- * @since 0.3.2
+ * @since 0.4.0
  * */
 export default class HeadlessButton extends HTMLButtonElement {
   constructor() {
