@@ -73,4 +73,4 @@ class HeadlessNavigation extends HeadlessUi {
   }
 }
 
-customElements.define("headless-navigation", HeadlessNavigation);
+customElements.define("headless-navigation", HeadlessNavigation)
