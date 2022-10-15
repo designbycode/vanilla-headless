@@ -12,7 +12,7 @@
 
 - [Install](#install)
 - [Use](#use)
-- [Demo]
+- [Demo](#codepen-demos)
 - [Web Components](#web-components)
     - [Popover](#popover-with-aria-keyboard-navigation)
     - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
