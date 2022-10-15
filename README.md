@@ -12,6 +12,7 @@
 
 - [Install](#install)
 - [Use](#use)
+- [Demo]
 - [Web Components](#web-components)
     - [Popover](#popover-with-aria-keyboard-navigation)
     - [Dropdown Menu](#dropdown-with-aria-keyboard-navigation)
@@ -47,6 +48,13 @@ import "vanilla-headless"
 
 > The **example** files is using [TailwindCSS](https://tailwindcss.com/) but is not required
 > with [TailwindUI](https://tailwindui.com/)
+
+
+### Codepen Demos
+- <a href="https://codepen.io/claudemyburgh/pen/JjvvPyx" target="_blank">Navigation, Popover, Dropdown, Disclosure, 
+  ScrollTop</a>
+- <a href="https://codepen.io/claudemyburgh/pen/yLjQYVJ" target="_blank">Dropdown Menu</a>
+
 
 ## Web Components
 
