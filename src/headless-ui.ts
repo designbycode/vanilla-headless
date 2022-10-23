@@ -1,5 +1,7 @@
 import { keycodeEquals } from "./utils"
 import { createPopper, Placement } from "@popperjs/core"
+import HeadlessButton from "./headless-button"
+
 /**
  * Abstract class for element that use popups
  * @class
@@ -24,7 +26,7 @@ import { createPopper, Placement } from "@popperjs/core"
  * @link closeOnExitKeyDown
  * */
 export default class HeadlessUi extends HTMLElement {
-  protected readonly button: HTMLButtonElement | null
+  protected readonly button: HTMLButtonElement | HeadlessButton | null
   protected readonly mainContainer: HTMLElement | null
   protected createPopper: any
 
@@ -37,9 +39,9 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Popper.js placement of htmlElement with attribute of aria-labelledby
-   * @return string[]
+   * @return any
    * */
-  protected get placement(): string[] {
+  protected get placement(): any {
     return this.getAttribute("placement")?.split(/(?:,| )+/g)
   }
 
@@ -134,10 +136,16 @@ export default class HeadlessUi extends HTMLElement {
    * */
   protected checkRequirements() {
     if (!this.button) {
-      throw new Error(`A button element with attribute "aria-haspopup" and "aria-expanded" is required`)
+      console.log(
+        `%c A button element with attribute "aria-haspopup" and "aria-expanded" is required`,
+        `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
+      )
     }
     if (!this.mainContainer) {
-      throw new Error(`A div element with attribute "aria-labelledby" is required`)
+      console.log(
+        `%c A div element with attribute "aria-labelledby" is required`,
+        `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
+      )
     }
   }
 

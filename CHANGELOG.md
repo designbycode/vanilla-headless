@@ -1,9 +1,18 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.4.0...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.0...HEAD)
 - Unreleased
 
-## [v0.4.0](https://github.com/designbycode/vanilla-headless/compare/v0.3.1...v0.4.0) - 2022-10-15
+## [v0.5.0](https://github.com/designbycode/vanilla-headless/compare/v0.4.0...v0.5.0) - 2022-10-23
+### Added
+- Headless button added disabled prevent event listeners from firing.
+### Changes
+- ScrollTop: implement HeadlessButton
+- Change error styling for missing attribute in console.
+- All components can use ``is="headless-button"``
+
+## [v0.5.0](https://github.com/designbycode/vanilla-headless/compare/v0.3.1...v0.4.0) - 2022-10-15
+
 ### Added
 - Added abstract HeadlessButton class to handle aria-pressed attribute
 - GoBack: added ``headless-goback`` directive that implements HeadlessButton

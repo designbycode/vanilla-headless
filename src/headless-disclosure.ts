@@ -1,3 +1,5 @@
+import HeadlessButton from "./headless-button";
+
 /**
  * Class for disclosure
  * @class
@@ -12,7 +14,7 @@
  * @since 0.1.4
  * */
 export class HeadlessDisclosure extends HTMLElement {
-  private buttons: NodeListOf<HTMLButtonElement> | null
+  private buttons: NodeListOf<HTMLButtonElement | HeadlessButton> | null
 
   constructor() {
     super()
@@ -36,7 +38,7 @@ export class HeadlessDisclosure extends HTMLElement {
    * Find element with ID that matches button with attribute aria-controls
    * @parma value
    * */
-  childSection(value: HTMLElement | null) {
+  private childSection(value: HTMLElement | null) {
     return this.querySelector(`#${value?.getAttribute("aria-controls")}`)
   }
 

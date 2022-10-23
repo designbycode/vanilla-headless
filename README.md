@@ -35,7 +35,9 @@ yarn add vanilla-headless
 ```
 
 ```bash
+// CDN
 https://unpkg.com/vanilla-headless@latest
+https://cdn.jsdelivr.net/npm/vanilla-headless@latest
 ```
 
 ### Use
@@ -51,9 +53,9 @@ import "vanilla-headless"
 
 
 ### Codepen Demos
-- <a href="https://codepen.io/claudemyburgh/pen/JjvvPyx" target="_blank">Navigation, Popover, Dropdown, Disclosure, 
-  ScrollTop</a>
-- <a href="https://codepen.io/claudemyburgh/pen/yLjQYVJ" target="_blank">Dropdown Menu</a>
+- [Navigation, Popover, Dropdown, Disclosure,
+  ScrollTop](https://codepen.io/claudemyburgh/pen/JjvvPyx)
+- [Dropdown Menu](https://codepen.io/claudemyburgh/pen/yLjQYVJ)
 
 
 ## Web Components
@@ -851,6 +853,8 @@ The dark mode component will toggle between dark and light and save the result t
 
 - Button:
     - must be typeof `button`
+    - There must be at least 1 ``headless-darkmode`` component on every page. It is recommended to use it with in a 
+      section that will be display on every page. Places like navigation or footer will work great. 
 
 ```html
 
@@ -871,10 +875,29 @@ The dark mode component will toggle between dark and light and save the result t
 
 Directives are markers on a DOM element to attach a specified behavior to that DOM element.
 
+- [Button](#Button component)
 - [ScrollTop](#scrolltop-with-aria-keyboard-interactions)
 - [GoBack](#goback-with-aria-keyboard-interactions)
 
-### ScrollTop with aria keyboard interactions
+### Button directive
+The button directive just adds event listeners to set aria-pressed attributes to a button element. Just add 
+``is="headless-button"`` to button element. Use css to style button using css propery `` button[aria-pressed=true] 
+`` or `` button[aria-pressed=false] 
+``
+
+#### Events
+
+- Add ``aria-pressed="true | false"`` on keydown, keyup, mouse click
+
+#### Requirements:
+
+- Must be a ``button`` element.
+- Just add ``is="headless-button"`` to button elements
+
+
+
+
+### ScrollTop with aria keyboard interactions (Extends HeadlessButton)
 
 The scroll-to-top button makes it super easy to add this feature to your website. Just add a button and add the
 attribute of `is="headless-scrolltop"` and that is it.
@@ -898,7 +921,7 @@ attribute of `is="headless-scrolltop"` and that is it.
 <button type="button" is="headless-scrolltop">Scroll to top</button>
 ```
 
-### GoBack with aria keyboard interactions
+### GoBack with aria keyboard interactions (Extends HeadlessButton)
 The ``headless-goback`` directive allow you to turn a button into go to previous page button using window.history 
 and adding the necessary aria indicators and events
 
@@ -910,6 +933,9 @@ and adding the necessary aria indicators and events
 ```html
 <button type="button" is="headless-goback">Go Back</button>
 ```
+
+
+
 
 ### PopperJs
 
