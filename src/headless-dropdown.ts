@@ -30,7 +30,7 @@ class HeadlessDropdown extends HeadlessUi {
     this.#currentSelectedItem = -1
     if (this.menuItems.length < 1) {
       console.log(
-        "%c headless-dropdown require at least 1 item with attribute role fof menuitem",
+        `%c headless-dropdown require at least 1 item with attribute role fof menuitem`,
         `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
       )
     }

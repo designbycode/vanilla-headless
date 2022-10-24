@@ -1,7 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.0...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.1...HEAD)
 - Unreleased
+
+## [v0.5.1](https://github.com/designbycode/vanilla-headless/compare/v0.5.0...v0.5.1) - 2022-10-24
+### Change 
+- Add inline style to hide and display section
+
 
 ## [v0.5.0](https://github.com/designbycode/vanilla-headless/compare/v0.4.0...v0.5.0) - 2022-10-23
 ### Added

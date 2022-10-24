@@ -1,7 +1,6 @@
 import { keycodeEquals } from "./utils"
 import { createPopper, Placement } from "@popperjs/core"
 import HeadlessButton from "./headless-button"
-
 /**
  * Abstract class for element that use popups
  * @class
@@ -207,6 +206,7 @@ export default class HeadlessUi extends HTMLElement {
     this.expanded = true
     this.hiddenAttribute = false
     this.popper && this.popperInit()
+    this.mainContainer && (this.mainContainer.style.display = "block")
   }
 
   /**
@@ -215,6 +215,7 @@ export default class HeadlessUi extends HTMLElement {
   protected close(): void {
     this.expanded = false
     this.hiddenAttribute = true
+    this.mainContainer && (this.mainContainer.style.display = "none")
   }
 
   /**

@@ -5,6 +5,6 @@ import "./headless-disclosure"
 import "./headless-rating"
 import "./headless-darkmode"
 
-// import "./headless-button"
+import "./headless-button"
 import "./headless-scrolltop"
 import "./headless-goback"
