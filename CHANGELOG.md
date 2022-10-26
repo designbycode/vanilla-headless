@@ -1,7 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.1...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.2...HEAD)
 - Unreleased
+
+
+## [v0.5.1](https://github.com/designbycode/vanilla-headless/compare/v0.5.1...v0.5.2) - 2022-10-26
+### Change 
+- Fixed popper default values
 
 ## [v0.5.1](https://github.com/designbycode/vanilla-headless/compare/v0.5.0...v0.5.1) - 2022-10-24
 ### Change 

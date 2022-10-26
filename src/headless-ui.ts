@@ -41,7 +41,7 @@ export default class HeadlessUi extends HTMLElement {
    * @return any
    * */
   protected get placement(): any {
-    return this.getAttribute("placement")?.split(/(?:,| )+/g)
+    return this.hasAttribute("placement") ? this.getAttribute("placement")?.split(/(?:,| )+/g) : [<Placement>"auto-start", <Placement>"auto-start"]
   }
 
   protected get offsets() {
@@ -174,7 +174,7 @@ export default class HeadlessUi extends HTMLElement {
   protected popperInit() {
     this.mainContainer &&
       this.createPopper(this, this.mainContainer, {
-        placement: <Placement>this.placement[0] || <Placement>"top",
+        placement: <Placement>this.placement[0],
         modifiers: [
           {
             name: "offset",
@@ -185,7 +185,7 @@ export default class HeadlessUi extends HTMLElement {
           {
             name: "flip",
             options: {
-              fallbackPlacements: [<Placement>this.placement[0] || <Placement>"bottom-end", <Placement>this.placement[1] || <Placement>"bottom-start"],
+              fallbackPlacements: [<Placement>this.placement[0], <Placement>this.placement[1]],
             },
           },
           {
