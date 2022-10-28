@@ -1,10 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.6...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.7...HEAD)
 - Unreleased
 
 
-## [v0.5.6](https://github.com/designbycode/vanilla-headless/compare/v0.5.5...v0.5.6) - 2022-10-28
+## [v0.5.7](https://github.com/designbycode/vanilla-headless/compare/v0.5.5...v0.5.7) - 2022-10-28
 ### Change 
 - Reverted back to display block
 - 
