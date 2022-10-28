@@ -21,6 +21,7 @@ class HeadlessNavigation extends HeadlessUi {
     super()
     this.button = this.querySelector("[aria-controls][aria-expanded]")
     this.mainContainer = this.querySelector(`#${this.button?.getAttribute("aria-controls")}`)
+    this.initialDisplayStyle = "block"
   }
 
   /**

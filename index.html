@@ -95,13 +95,7 @@
 </head>
 <body class="p-12 space-y-24">
 
-
-
-
-
-
-<headless-navigation>
-<nav class="bg-gray-800">
+<headless-navigation rol="navigation" class="block bg-gray-50">
   <div class="w-full  mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
@@ -141,19 +135,8 @@
               </button>
             </div>
 
-            <!--
-              Dropdown menu, show/hide based on menu state.
-
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
             <div
               class="origin-top-right none absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-              <!-- Active: "bg-gray-100", Not Active: "" -->
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
               <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
@@ -211,8 +194,8 @@
       </div>
     </div>
   </div>
-</nav>
 </headless-navigation>
+
 
 
 <button is="headless-button" class="px-4 bg-gray-200 border border-gray-400 inline-block rounded-md m-2" type="button"

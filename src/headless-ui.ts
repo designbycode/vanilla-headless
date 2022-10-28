@@ -28,7 +28,7 @@ export default class HeadlessUi extends HTMLElement {
   protected readonly button: HTMLButtonElement | HeadlessButton | null
   protected readonly mainContainer: HTMLElement | null
   protected createPopper: any
-  #initialDisplayStyle: string
+  protected initialDisplayStyle: string
 
   constructor() {
     super()
@@ -36,7 +36,7 @@ export default class HeadlessUi extends HTMLElement {
     this.mainContainer = this.querySelector("[aria-labelledby]")
     this.createPopper = createPopper
     const display = window.getComputedStyle(this.mainContainer).getPropertyValue("display")
-    this.#initialDisplayStyle = display === "none" ? "block" : window.getComputedStyle(this.mainContainer).getPropertyValue("display")
+    this.initialDisplayStyle = display === "none" ? "block" : window.getComputedStyle(this.mainContainer).getPropertyValue("display")
   }
 
   /**
@@ -209,7 +209,7 @@ export default class HeadlessUi extends HTMLElement {
     this.expanded = true
     this.hiddenAttribute = false
     this.popper && this.popperInit()
-    this.mainContainer && (this.mainContainer.style.display = this.#initialDisplayStyle)
+    this.mainContainer && (this.mainContainer.style.display = this.initialDisplayStyle)
   }
 
   /**
