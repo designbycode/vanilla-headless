@@ -1,10 +1,16 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.2...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.3...HEAD)
 - Unreleased
 
 
-## [v0.5.1](https://github.com/designbycode/vanilla-headless/compare/v0.5.1...v0.5.2) - 2022-10-26
+## [v0.5.3](https://github.com/designbycode/vanilla-headless/compare/v0.5.2...v0.5.3) - 2022-10-28
+### Change 
+- Fixed save initial display state off dropdown element 
+- Removed console log
+
+
+## [v0.5.2](https://github.com/designbycode/vanilla-headless/compare/v0.5.1...v0.5.2) - 2022-10-26
 ### Change 
 - Fixed popper default values
 
