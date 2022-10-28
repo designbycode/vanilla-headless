@@ -35,8 +35,7 @@ export default class HeadlessUi extends HTMLElement {
     this.button = this.querySelector("[aria-haspopup][aria-expanded]")
     this.mainContainer = this.querySelector("[aria-labelledby]")
     this.createPopper = createPopper
-    const display = window.getComputedStyle(this.mainContainer).getPropertyValue("display")
-    this.initialDisplayStyle = display === "none" ? "block" : window.getComputedStyle(this.mainContainer).getPropertyValue("display")
+    this.initialDisplayStyle = "block"
   }
 
   /**
