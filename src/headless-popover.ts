@@ -1,5 +1,4 @@
 import HeadlessUi from "./headless-ui"
-
 /**
  * Class for popovers menus
  * @class

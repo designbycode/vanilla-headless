@@ -119,7 +119,7 @@ class HeadlessDropdown extends HeadlessUi {
     if (!event.shiftKey && keycodeEquals(["Tab"], event)) {
       this.#indexPointer++
       if (this.#indexPointer > this.menuItems.length - 1) {
-        console.log(this.nextSibling)
+        // TODO: use tab to go to next tabable index
       }
     }
     if (event.shiftKey && keycodeEquals(["Tab"], event)) {

@@ -1,5 +1,4 @@
-import HeadlessButton from "./headless-button";
-
+import HeadlessButton from "./headless-button"
 /**
  * Class for disclosure
  * @class
