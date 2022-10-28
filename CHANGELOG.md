@@ -1,10 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.3...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.4...HEAD)
 - Unreleased
 
 
-## [v0.5.3](https://github.com/designbycode/vanilla-headless/compare/v0.5.2...v0.5.3) - 2022-10-28
+## [v0.5.3](https://github.com/designbycode/vanilla-headless/compare/v0.5.2...v0.5.4) - 2022-10-28
 ### Change 
 - Fixed save initial display state off dropdown element 
 - Removed console log
