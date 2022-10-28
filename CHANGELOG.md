@@ -1,13 +1,13 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.7...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.8...HEAD)
 - Unreleased
 
 
-## [v0.5.7](https://github.com/designbycode/vanilla-headless/compare/v0.5.5...v0.5.7) - 2022-10-28
+## [v0.5.8](https://github.com/designbycode/vanilla-headless/compare/v0.5.5...v0.5.8) - 2022-10-28
 ### Change 
 - Reverted back to display block
-- 
+
 ## [v0.5.5](https://github.com/designbycode/vanilla-headless/compare/v0.5.4...v0.5.5) - 2022-10-28
 ### Change 
 - Fixed save initial display navigation element
