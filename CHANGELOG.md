@@ -1,7 +1,13 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.5.8...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.0...HEAD)
 - Unreleased
+
+
+## [v0.6.0](https://github.com/designbycode/vanilla-headless/compare/v0.5.8...v0.6.0) - 2022-10-29
+### Added
+- Custom toggle switch component 
+- Navigation update by adding an ``data-state="open | close"`` to help with css styling. 
 
 
 ## [v0.5.8](https://github.com/designbycode/vanilla-headless/compare/v0.5.5...v0.5.8) - 2022-10-28

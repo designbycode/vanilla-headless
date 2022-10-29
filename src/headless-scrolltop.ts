@@ -1,6 +1,7 @@
 import HeadlessButton from "./headless-button"
 /**
- * @class ScrollToTop
+ * Class for ScrollToTop
+ * @class
  * @extends HeadlessButton
  * @augments offset
  * @augments scrollOffset
@@ -14,7 +15,7 @@ import HeadlessButton from "./headless-button"
  * @link scrollUpOnCtrlHome
  * @link scrollUpOnKeyDown
  * @link hideButtonOnScroll
- * @since 2.0
+ * @since 0.2.0
  * */
 export class HeadlessScrollTop extends HeadlessButton {
   #displayProperty: string
@@ -23,7 +24,6 @@ export class HeadlessScrollTop extends HeadlessButton {
     super()
     this.#displayProperty = "none"
     this.hiddenAttribute = true
-    this.ariaPressed = "false"
   }
 
   /**
@@ -34,14 +34,28 @@ export class HeadlessScrollTop extends HeadlessButton {
     return parseInt(this.getAttribute("offset")!)
   }
 
+  /**
+   * Scroll offset from top to show
+   * @return number
+   */
   get scrollOffset(): number {
     return parseInt(this.getAttribute("scroll-offset")!) || 100
   }
 
+  /**
+   * List of key to trigger event
+   * @protected
+   * @return string[]
+   */
   protected get allowedKeyCodes(): string[] {
     return super.allowedKeyCodes
   }
 
+  /**
+   * List of key to trigger event with Ctrl key
+   * @protected
+   * @return string[]
+   */
   protected get allowedKeyCodesWithCtrl(): string[] {
     return ["Home"]
   }
@@ -84,6 +98,7 @@ export class HeadlessScrollTop extends HeadlessButton {
 
   /**
    * Animate to top of window
+   * @return void
    * */
   private scrollTopAnimation(): void {
     window.scrollTo({ top: this.offset || 0, behavior: "smooth" })

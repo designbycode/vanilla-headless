@@ -1,9 +1,10 @@
 import { keycodeEquals } from "./utils"
 import { createPopper, Placement } from "@popperjs/core"
 import HeadlessButton from "./headless-button"
+
 /**
  * Abstract class for element that use popups
- * @class
+ * @class HeadlessUi
  * @link constructor
  * @link placement getter setter
  * @link offsets
@@ -43,16 +44,21 @@ export default class HeadlessUi extends HTMLElement {
    * @return any
    * */
   protected get placement(): any {
-    return this.hasAttribute("placement") ? this.getAttribute("placement")?.split(/(?:,| )+/g) : [<Placement>"auto-start", <Placement>"auto-start"]
+    return this.hasAttribute("placement") ? this.getAttribute("placement")?.split(/(?:,| )+/g) : [<Placement>"bottom", <Placement>"bottom"]
   }
 
-  protected get offsets() {
+  /**
+   * Set offsets for popper from attribute
+   * @protected
+   * @return number[]
+   */
+  protected get offsets(): number[] {
     return (
       this.getAttribute("offsets")
         ?.split(/(?:,| )+/g)
         .map(function (x) {
           return parseInt(x, 10)
-        }) || [0, 10]
+        }) || [0, 0]
     )
   }
 
@@ -152,8 +158,9 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Bind event listeners to connectedCallback
+   * @return void
    * */
-  protected addEventListeners() {
+  protected addEventListeners(): void {
     this.button?.addEventListener("click", this.toggleOpen.bind(this))
     this.button?.addEventListener("keydown", this.buttonKeyEvent.bind(this))
     window.addEventListener("keydown", this.closeOnExitKeyDown.bind(this))
@@ -203,8 +210,9 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Open htmlElement with attribute of aria-labelledby
+   * @return void
    * */
-  protected open() {
+  protected open(): void {
     this.expanded = true
     this.hiddenAttribute = false
     this.popper && this.popperInit()
@@ -213,6 +221,7 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Close htmlElement with attribute of aria-labelledby
+   * @return void
    * */
   protected close(): void {
     this.expanded = false
@@ -222,13 +231,15 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Toggle htmlElement with attribute of aria-labelledby
+   * @return void
    * */
-  protected toggleOpen() {
+  protected toggleOpen(): void {
     this.expanded ? this.close() : this.open()
   }
 
   /**
    * Keyboard event for button with attribute of aria-expanded and aria-haspopup
+   * @return void
    * */
   protected buttonKeyEvent(event: KeyboardEvent): void {
     if (keycodeEquals(["Space", "Enter"], event)) {
@@ -244,18 +255,19 @@ export default class HeadlessUi extends HTMLElement {
 
   /**
    * Mouse event for closing htmlElement with attribute of aria-labelledby by clicking outside target element
+   * @return void
    * */
-  protected closeOnClickOutSide(event: MouseEvent) {
-    // @ts-ignore
-    if (!this.contains(event.target) && this.expanded) {
+  protected closeOnClickOutSide(event: MouseEvent): void {
+    if (event instanceof MouseEvent && !this.contains(event.target as Node) && this.expanded) {
       this.close()
     }
   }
 
   /**
    * Keyboard event for closing htmlElement with attribute of aria-labelledby by pressing "Escape" key
+   * @return void
    * */
-  protected closeOnExitKeyDown(event: KeyboardEvent) {
+  protected closeOnExitKeyDown(event: KeyboardEvent): void {
     keycodeEquals(["Escape"], event) && this.close()
   }
 }
