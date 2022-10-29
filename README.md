@@ -19,6 +19,7 @@
     - [Disclosure](#disclosure-with-aria-keyboard-navigation)
     - [Mobile Navigation](#navigation-with-aria-keyboard-interactions)
     - [Dark Mode Button](#dark-mode-toggle-button-with-keyboard-interactions)
+    - [Toggle Switch](#toggle-switch)
 - [Directives](#directives)
     - [ScrollTop](#scrolltop-with-aria-keyboard-interactions)
     - [GoBack](#goback-with-aria-keyboard-interactions)
@@ -68,6 +69,7 @@ css.
 - [disclosure](#disclosure-with-aria-keyboard-navigation)
 - [navigation](#navigation-with-aria-keyboard-interactions)
 - [darkmode](#dark-mode-toggle-button-with-keyboard-interactions)
+- [toggle switch](#toggle-switch)
 
 ### Popover with aria keyboard navigation
 
@@ -386,7 +388,7 @@ The Disclosure element is ideal for hide and showing a list of elements. Best us
 ### Navigation with aria keyboard interactions
 
 This component allow you to add hamburger toggle functionality to your navigation by adding aria labels to button
-and the section you want to hide and show.
+and the section you want to hide and show. The data attribute of ``data-state`` can be used to style or hide element.
 
 ![](./img/navbar.gif)
 
@@ -396,6 +398,7 @@ and the section you want to hide and show.
 - Toggle mobile menu pressing down on Enter and Space keys.
 - Close mobile menu pressing Esc Key.
 - Close mobile menu by clicking outside menu.
+- Add multiple data-state of open and close
 
 #### Requirements:
 
@@ -857,7 +860,6 @@ The dark mode component will toggle between dark and light and save the result t
       section that will be display on every page. Places like navigation or footer will work great. 
 
 ```html
-
 <headless-darkmode class="inline-flex">
   <button type="button"
           class="px-4 py-2 flex justify-center space-x-2 inline-block rounded-md dark:bg-white dark:text-gray-600  bg-gray-700 text-gray-100 shadow-md">
@@ -868,7 +870,40 @@ The dark mode component will toggle between dark and light and save the result t
     <span>Dark Mode</span>
   </button>
 </headless-darkmode>
+```
+Markup the button the way you want and adding ``data-switch`` to one or multiple elements. This will set the data 
+attribute to "on" or "off". Now you can style, hide or show elements by styling data attribute. By default, this 
+attribute will be added to the top level component.
 
+```css
+headless-toggle[data-switch="on"] button[aria-checked] {
+    background: indigo;
+}
+
+headless-toggle[data-switch="on"] span[aria-hidden="true"] {
+    transform: translateX(20px);
+}
+```
+
+### Toggle Switch
+The toggle component allow you to turn a button elements into toggle switch
+![](./img/toggle-switch.gif)
+
+#### Events
+  - Toggle switch with mouse click event
+  - Toggle switch by pressing down on Enter and Space keys.
+
+#### Requirements
+  - Button element with type of button
+
+```html 
+<headless-toggle aria-disabled="false">
+  <button aria-checked="true" class="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2  border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="button">
+    <span class="sr-only">Use setting</span>
+    <span aria-hidden="true" class="translate-x-0 pointer-events-none inline-block h-5 w-5 rounded-full bg-white 
+    shadow transform ring-0 transition ease-in-out duration-50" data-switch></span>
+  </button>
+</headless-toggle>
 ```
 
 ## Directives
