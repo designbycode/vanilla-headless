@@ -2,8 +2,11 @@
 
 ##### Completely un-styled, fully accessible UI Web Components library, with fully unopinionated css styling.
 
-[![npm version](https://badge.fury.io/js/vanilla-headless.svg)](https://badge.fury.io/js/vanilla-headless)
+![npm (tag)](https://img.shields.io/npm/v/vanilla-headless/latest?color=brightgreen)
 ![npm](https://img.shields.io/npm/dt/vanilla-headless)
+![npm type definitions](https://img.shields.io/npm/types/vanilla-headless)
+![NPM](https://img.shields.io/npm/l/vanilla-headless)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/vanilla-headless)
 [![GitHub stars](https://img.shields.io/github/stars/DesignByCode/vanilla-headless?style=social)](https://github.com/DesignByCode/vanilla-headless/stargazers)
 
 [![NPM](https://nodei.co/npm/vanilla-headless.png)](https://nodei.co/npm/vanilla-headless/)
@@ -871,19 +874,6 @@ The dark mode component will toggle between dark and light and save the result t
   </button>
 </headless-darkmode>
 ```
-Markup the button the way you want and adding ``data-switch`` to one or multiple elements. This will set the data 
-attribute to "on" or "off". Now you can style, hide or show elements by styling data attribute. By default, this 
-attribute will be added to the top level component.
-
-```css
-headless-toggle[data-switch="on"] button[aria-checked] {
-    background: indigo;
-}
-
-headless-toggle[data-switch="on"] span[aria-hidden="true"] {
-    transform: translateX(20px);
-}
-```
 
 ### Toggle Switch
 The toggle component allow you to turn a button elements into toggle switch
@@ -905,12 +895,26 @@ The toggle component allow you to turn a button elements into toggle switch
   </button>
 </headless-toggle>
 ```
+#### Styling toggle state
+Markup the button the way you want and adding ``data-switch`` to one or multiple elements. This will set the data 
+attribute to "on" or "off". Now you can style, hide or show elements by styling data attribute. By default, this 
+attribute will be added to the top level component.
+```css
+headless-toggle[data-switch="on"] button[aria-checked] {
+    background: indigo;
+}
+
+headless-toggle[data-switch="on"] span[aria-hidden="true"] {
+    transform: translateX(20px);
+}
+```
+
 
 ## Directives
 
 Directives are markers on a DOM element to attach a specified behavior to that DOM element.
 
-- [Button](#Button component)
+- [Button](#button-directive)
 - [ScrollTop](#scrolltop-with-aria-keyboard-interactions)
 - [GoBack](#goback-with-aria-keyboard-interactions)
 
@@ -992,6 +996,6 @@ DropDown and Navigation component.
 
 <headless-dropdown popper placement="bottom-end bottom-start" ....
 <headless-dropdown popper="true" placement="bottom-end,bottom-start" ....
-<headless-dropdown popper offset="0 20" ....
-<headless-dropdown popper="true" offset="0,20" ....
+<headless-dropdown popper offsets="0 20" ....
+<headless-dropdown popper="true" offsets="0,20" ....
 ```
