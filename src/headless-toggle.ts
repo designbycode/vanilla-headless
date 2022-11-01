@@ -11,6 +11,8 @@ import { keycodeEquals } from "./utils"
  * @link switchOn
  * @link switchOff
  * @link toggle
+ * @link setInitialState
+ * @link updateAttributeSwitch
  * @since 0.6.0
  * */
 export class HeadlessToggle extends HTMLElement {
@@ -21,11 +23,6 @@ export class HeadlessToggle extends HTMLElement {
     this.button = this.querySelector("button[aria-checked]")!
     this.setAttribute("role", "switch")
     this.tabIndex = -1
-    if (this.button.ariaChecked === "true") {
-      this.dataset.switch = "on"
-    } else if (this.button.ariaChecked === "false") {
-      this.dataset.switch = "off"
-    }
     this.updateAttributeSwitch(String(this.dataset.switch))
   }
 
@@ -43,6 +40,7 @@ export class HeadlessToggle extends HTMLElement {
   connectedCallback() {
     this.button.addEventListener("click", this.switch.bind(this))
     this.button.addEventListener("keydown", this.switch.bind(this))
+    this.setInitialState()
   }
 
   disconnectedCallback() {
@@ -65,16 +63,11 @@ export class HeadlessToggle extends HTMLElement {
   /**
    * Use keyboard and mouse events to change state
    * @param event
-   * @protected
+   * @private
    * @return void
    */
-  protected switch(event: MouseEvent | KeyboardEvent): void {
-    if (event instanceof KeyboardEvent && event.type === "keydown" && keycodeEquals(["Space", "Enter"], event)) {
-      event.preventDefault()
-      this.toggle()
-    }
-
-    if (event instanceof MouseEvent && event.type === "click") {
+  private switch(event: MouseEvent | KeyboardEvent): void {
+    if ((event instanceof KeyboardEvent && event.type === "keydown" && keycodeEquals(["Space", "Enter"], event)) || (event instanceof MouseEvent && event.type === "click")) {
       event.preventDefault()
       this.toggle()
     }
@@ -82,32 +75,45 @@ export class HeadlessToggle extends HTMLElement {
 
   /**
    * Set aria-checked to true
-   * @protected
+   * @private
    * @return void
    */
-  protected switchOn(): void {
+  private switchOn(): void {
     this.button.ariaChecked = "true"
     this.dataset.switch = "on"
   }
 
   /**
    * Set aria-checked to false
-   * @protected
+   * @private
    * @return void
    */
-  protected switchOff(): void {
+  private switchOff(): void {
     this.button.ariaChecked = "false"
     this.dataset.switch = "off"
   }
 
   /**
    * Toggle aria-checked
-   * @protected
+   * @private
    * @return void
    */
-  protected toggle(): void {
+  private toggle(): void {
     if (this.ariaDisabled === "true") return
     this.button.ariaChecked === "true" ? this.switchOff() : this.switchOn()
+  }
+
+  /**
+   * Set initial state of switch attribute
+   * @private
+   * @return void
+   */
+  private setInitialState(): void {
+    if (this.button.ariaChecked === "true") {
+      this.dataset.switch = "on"
+    } else if (this.button.ariaChecked === "false") {
+      this.dataset.switch = "off"
+    }
   }
 
   private updateAttributeSwitch(value: string): void {

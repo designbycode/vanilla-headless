@@ -99,7 +99,7 @@ popover.
 
 ```html
 <!-- require tailwindcss for example -->
-<headless-popover class="relative" offsets="0 10" placement="bottom-end bottom" popper>
+<headless-popover class="relative" offset="0 10" placement="bottom-end bottom" popper>
   <button
     aria-expanded="true"
     aria-haspopup="true"
@@ -402,6 +402,7 @@ and the section you want to hide and show. The data attribute of ``data-state`` 
 - Close mobile menu pressing Esc Key.
 - Close mobile menu by clicking outside menu.
 - Add multiple data-state of open and close
+- Support two-way binding on state change of data-state
 
 #### Requirements:
 
@@ -996,6 +997,6 @@ DropDown and Navigation component.
 
 <headless-dropdown popper placement="bottom-end bottom-start" ....
 <headless-dropdown popper="true" placement="bottom-end,bottom-start" ....
-<headless-dropdown popper offsets="0 20" ....
-<headless-dropdown popper="true" offsets="0,20" ....
+<headless-dropdown popper offset="0 20" ....
+<headless-dropdown popper="true" offset="0,20" ....
 ```

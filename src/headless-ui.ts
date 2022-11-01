@@ -7,7 +7,7 @@ import HeadlessButton from "./headless-button"
  * @class HeadlessUi
  * @link constructor
  * @link placement getter setter
- * @link offsets
+ * @link offset
  * @link expanded
  * @link hiddenAttribute
  * @link isDisabled
@@ -48,13 +48,13 @@ export default class HeadlessUi extends HTMLElement {
   }
 
   /**
-   * Set offsets for popper from attribute
+   * Set offset for popper from attribute
    * @protected
    * @return number[]
    */
-  protected get offsets(): number[] {
+  protected get offset(): number[] {
     return (
-      this.getAttribute("offsets")
+      this.getAttribute("offset")
         ?.split(/(?:,| )+/g)
         .map(function (x) {
           return parseInt(x, 10)
@@ -188,7 +188,7 @@ export default class HeadlessUi extends HTMLElement {
           {
             name: "offset",
             options: {
-              offset: this.offsets,
+              offset: this.offset,
             },
           },
           {

@@ -1,14 +1,21 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.1...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.2...HEAD)
 - Unreleased
+
+## [v0.6.2](https://github.com/designbycode/vanilla-headless/compare/v0.6.1...v0.6.2) - 2022-11-01
+### Added
+- Navigation work now with two-way binding changing data-state attribute
+
+### Change 
+- Renamed popper attribute offsets to offset
+- Refactored toggle switch
 
 
 ## [v0.6.1](https://github.com/designbycode/vanilla-headless/compare/v0.5.8...v0.6.1) - 2022-10-29
 ### Added
 - Custom toggle switch component 
 - Navigation update by adding an ``data-state="open | close"`` to help with css styling. 
-
 
 ## [v0.5.8](https://github.com/designbycode/vanilla-headless/compare/v0.5.5...v0.5.8) - 2022-10-28
 ### Change 
@@ -23,7 +30,6 @@
 - Fixed save initial display state off dropdown element 
 - Removed console log
 
-
 ## [v0.5.2](https://github.com/designbycode/vanilla-headless/compare/v0.5.1...v0.5.2) - 2022-10-26
 ### Change 
 - Fixed popper default values
@@ -31,7 +37,6 @@
 ## [v0.5.1](https://github.com/designbycode/vanilla-headless/compare/v0.5.0...v0.5.1) - 2022-10-24
 ### Change 
 - Add inline style to hide and display section
-
 
 ## [v0.5.0](https://github.com/designbycode/vanilla-headless/compare/v0.4.0...v0.5.0) - 2022-10-23
 ### Added

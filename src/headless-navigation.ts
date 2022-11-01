@@ -1,7 +1,6 @@
 import HeadlessUi from "./headless-ui"
 import { keycodeEquals } from "./utils"
 import HeadlessButton from "./headless-button"
-
 /**
  * Class for navigation
  * @class HeadlessNavigation
@@ -57,6 +56,11 @@ class HeadlessNavigation extends HeadlessUi {
   attributeChangedCallback(property: any, oldValue: any, newValue: any) {
     if (property === "data-state" && oldValue !== newValue) {
       this.updateAttributeState(newValue)
+      if (newValue === "open") {
+        this.open()
+      } else if (newValue === "close") {
+        this.close()
+      }
     }
   }
 
@@ -131,6 +135,11 @@ class HeadlessNavigation extends HeadlessUi {
     this.dataset.state = "close"
   }
 
+  /**
+   * Update all data-state attributes to parent dataset
+   * @param value
+   * @private
+   */
   private updateAttributeState(value: string): void {
     this.states.forEach((state) => (state.dataset.state = value))
   }
