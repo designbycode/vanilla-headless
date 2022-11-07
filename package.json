@@ -9,15 +9,15 @@
     "url": "https://github.com/DesignByCode/vanilla-headless/issues"
   },
   "scripts": {
-    "dev:ts": "tsc -p tsconfig.json",
+    "dev:ts": "tsc -p tsconfig.json --watch",
     "dev:mix": "npx mix watch",
-    "dev": "run-p dev:* && serve",
+    "dev": "run-p dev:*",
     "clean": "rd /s /q esm dist lib build .cache>nul 2>&1|echo.>nul",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "precommit": "npm run test && lint-staged",
     "prebuild": "npm run clean",
-    "build": "tsc -p tsconfig.json && npx mix && gulp"
+    "build": "tsc -p tsconfig.json && npx mix --production"
   },
   "keywords": [
     "headlessui",

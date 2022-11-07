@@ -1,13 +1,15 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.3...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.4...HEAD)
 - Unreleased
 
-## [v0.6.3](https://github.com/designbycode/vanilla-headless/compare/v0.6.2...v0.6.3) - 2022-11-07
+## [v0.6.4](https://github.com/designbycode/vanilla-headless/compare/v0.6.2...v0.6.4) - 2022-11-07
 ### Change
 - Darkmode: fixed Tab and Shift + Tab to focus out.
 - Darkmode: removeEventListeners disconnectedCallback
 - Darkmode: Update return types
+- Darkmode: Add multiply data-theme for styling to any element in component. 
+- Darkmode: Programmatically set button aria-checked if not exist.
 - Toggle: Programmatically set button aria-checked if not exist.
 
 ## [v0.6.2](https://github.com/designbycode/vanilla-headless/compare/v0.6.1...v0.6.2) - 2022-11-01
