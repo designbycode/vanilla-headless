@@ -20,9 +20,15 @@ export class HeadlessToggle extends HTMLElement {
 
   constructor() {
     super()
-    this.button = this.querySelector("button[aria-checked]")!
+    this.button = this.querySelector("button")!
+    if (!this.button.hasAttribute("aria-checked")) {
+      this.button.setAttribute("aria-checked", "false")
+    }
+
     this.setAttribute("role", "switch")
+
     this.tabIndex = -1
+
     this.updateAttributeSwitch(String(this.dataset.switch))
   }
 
@@ -116,6 +122,11 @@ export class HeadlessToggle extends HTMLElement {
     }
   }
 
+  /**
+   * Update all data-switch
+   * @param value
+   * @private
+   */
   private updateAttributeSwitch(value: string): void {
     this.datasetSwitch.forEach((item: HTMLElement) => (item.dataset.switch = value))
   }

@@ -33,13 +33,16 @@ export class HeadlessDarkMode extends HTMLElement {
 
   disconnectedCallback() {
     this.button?.removeEventListener('click', this.toggleTheme)
+    this.button?.removeEventListener("keydown", this.toggleThemeWithKeyboard)
   }
+
+
 
   /**
    * Check if mode is equal to 'dark'
-   * @return Boolean
+   * @return boolean
    * */
-  private get isDarkMode(): Boolean {
+  private get isDarkMode(): boolean {
     return localStorage.theme === `dark` || (!(`theme` in localStorage) && window.matchMedia(`(prefers-color-scheme: dark)`).matches)
   }
 

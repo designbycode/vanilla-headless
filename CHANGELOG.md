@@ -1,7 +1,14 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.2...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.6.3...HEAD)
 - Unreleased
+
+## [v0.6.3](https://github.com/designbycode/vanilla-headless/compare/v0.6.2...v0.6.3) - 2022-11-07
+### Change
+- Darkmode: fixed Tab and Shift + Tab to focus out.
+- Darkmode: removeEventListeners disconnectedCallback
+- Darkmode: Update return types
+- Toggle: Programmatically set button aria-checked if not exist.
 
 ## [v0.6.2](https://github.com/designbycode/vanilla-headless/compare/v0.6.1...v0.6.2) - 2022-11-01
 ### Added
