@@ -26,6 +26,13 @@ export class HeadlessScrollTop extends HeadlessButton {
     this.hiddenAttribute = true
   }
 
+  private skipToFocus() {
+    if (this.hasAttribute("skip-to-focus")) {
+      const item = this.getAttribute("skip-to-focus")
+      return (document.querySelector(`a[href="${item}"]`) as HTMLElement).focus()
+    }
+  }
+
   /**
    * Assign integer to scroll to offset top
    * @return number
@@ -102,6 +109,7 @@ export class HeadlessScrollTop extends HeadlessButton {
    * */
   private scrollTopAnimation(): void {
     window.scrollTo({ top: this.offset || 0, behavior: "smooth" })
+    this.skipToFocus()
   }
 
   /**
