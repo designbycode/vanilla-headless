@@ -3,7 +3,7 @@
 ## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.7.0...HEAD)
 - Unreleased
 
-## [v0.7.0](https://github.com/designbycode/vanilla-headless/compare/v0.6.4...v0.7.0) - 2022-11-07
+## [v0.7.0](https://github.com/designbycode/vanilla-headless/compare/v0.6.4...v0.7.0) - 2022-11-09
 ### Added 
 - ScrollTop: added attribute skip-to-focus to add focus to skip to main
 
