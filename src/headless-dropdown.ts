@@ -151,9 +151,9 @@ class HeadlessDropdown extends HeadlessUi {
   /**
    * Mark selected with menuItem with aria-current and resetting rest menuItem to have no aria-current
    * */
-  private markAsCurrent(event: any): void {
+  private markAsCurrent(event: MouseEvent | KeyboardEvent): void {
     this.menuItems.forEach((item) => item.removeAttribute("aria-current"))
-    this.#currentSelectedItem = Array.from(this.menuItems).indexOf(event.target)
+    this.#currentSelectedItem = (Array.from(this.menuItems)).indexOf(<HTMLElement>event.target)
     this.#currentSelectedItem >= 0 && this.menuItems[this.#currentSelectedItem].setAttribute("aria-current", this.current)
   }
 
