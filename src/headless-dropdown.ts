@@ -2,7 +2,7 @@ import HeadlessUi from "./headless-ui"
 import { keycodeEquals } from "./utils"
 /**
  * Class for dropdown menus
- * @class
+ * @class HeadlessDropdown
  * @augments HeadlessUi
  * @link constructor
  * @link current
@@ -109,21 +109,34 @@ class HeadlessDropdown extends HeadlessUi {
    * Keyboard event for navigating menuItems
    * */
   private navigateKeys(event: KeyboardEvent): void {
-    if (!keycodeEquals(["Enter"], event)) event.preventDefault()
-    keycodeEquals(["Enter"], event) && this.close()
-    keycodeEquals(["Space"], event) && this.close()
-    keycodeEquals(["ArrowDown", "ArrowRight"], event) && this.#indexPointer < this.menuItems.length - 1 && this.#indexPointer++
-    keycodeEquals(["ArrowUp", "ArrowLeft"], event) && this.#indexPointer > 0 && this.#indexPointer--
-    if (keycodeEquals(["Home"], event) && this.#indexPointer > 0) this.#indexPointer = 0
-    if (keycodeEquals(["End"], event) && this.#indexPointer < this.menuItems.length) this.#indexPointer = this.menuItems.length - 1
-    if (!event.shiftKey && keycodeEquals(["Tab"], event)) {
+    if (!keycodeEquals(["Enter"], event)) {
+      event.preventDefault()
+    }
+
+    if (keycodeEquals(["Enter", "Space"], event)) {
+      this.close()
+    }
+
+    if (
+      (keycodeEquals(["ArrowDown", "ArrowRight"], event) && this.#indexPointer < this.menuItems.length - 1) ||
+      (!event.shiftKey && keycodeEquals(["Tab"], event) && this.#indexPointer < this.menuItems.length - 1)
+    ) {
       this.#indexPointer++
-      if (this.#indexPointer > this.menuItems.length - 1) {
-        // TODO: use tab to go to next tabable index
+    }
+
+    if ((keycodeEquals(["ArrowUp", "ArrowLeft"], event) && this.#indexPointer > 0) || (event.shiftKey && keycodeEquals(["Tab"], event) && this.#indexPointer > -1)) {
+      this.#indexPointer--
+      if (this.#indexPointer === -1) {
+        this.button.focus()
       }
     }
-    if (event.shiftKey && keycodeEquals(["Tab"], event)) {
-      this.#indexPointer--
+
+    if (keycodeEquals(["Home"], event) && this.#indexPointer > 0) {
+      this.#indexPointer = 0
+    }
+
+    if (keycodeEquals(["End"], event) && this.#indexPointer < this.menuItems.length) {
+      this.#indexPointer = this.menuItems.length - 1
     }
   }
 

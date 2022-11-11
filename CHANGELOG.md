@@ -1,7 +1,15 @@
 # Release Notes
 
-## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.7.0...HEAD)
+## [Unreleased](https://github.com/designbycode/vanilla-headless/compare/v0.7.2...HEAD)
 - Unreleased
+
+## [v0.7.2](https://github.com/designbycode/vanilla-headless/compare/v0.7.1...v0.7.2) - 2022-11-11
+### Change 
+- Changed from laravel-mix to rollupjs
+- Dropdown: fixed tabindex
+
+## Added 
+- Support for commenjs esm umd
 
 ## [v0.7.0](https://github.com/designbycode/vanilla-headless/compare/v0.6.4...v0.7.0) - 2022-11-09
 ### Added 
