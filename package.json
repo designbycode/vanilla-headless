@@ -1,6 +1,6 @@
 {
   "name": "vanilla-headless",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "browser": "build/index.umd.js",
