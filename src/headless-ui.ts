@@ -33,7 +33,10 @@ export default class HeadlessUi extends HTMLElement {
 
   constructor() {
     super()
-    this.button = this.querySelector("[aria-haspopup][aria-expanded]")
+    this.button = this.querySelector("[aria-expanded]")
+    if (this.button.ariaHasPopup) {
+      this.button.ariaHasPopup = "true"
+    }
     this.mainContainer = this.querySelector("[aria-labelledby]")
     this.createPopper = createPopper
     this.initialDisplayStyle = "block"
@@ -143,16 +146,10 @@ export default class HeadlessUi extends HTMLElement {
    * */
   protected checkRequirements() {
     if (!this.button) {
-      console.log(
-        `%c A button element with attribute "aria-haspopup" and "aria-expanded" is required`,
-        `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
-      )
+      throw new Error(`A button element with attribute "aria-haspopup" and "aria-expanded" is required`)
     }
     if (!this.mainContainer) {
-      console.log(
-        `%c A div element with attribute "aria-labelledby" is required`,
-        `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
-      )
+      throw new Error(`A div element with attribute "aria-labelledby" is required`)
     }
   }
 

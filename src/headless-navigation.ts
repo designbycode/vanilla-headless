@@ -1,6 +1,7 @@
 import HeadlessUi from "./headless-ui"
 import { keycodeEquals } from "./utils"
 import HeadlessButton from "./headless-button"
+import { randomId } from "./utils"
 /**
  * Class for navigation
  * @class HeadlessNavigation
@@ -20,13 +21,13 @@ import HeadlessButton from "./headless-button"
  * @since 0.1.4
  * */
 class HeadlessNavigation extends HeadlessUi {
-  protected declare readonly button: HTMLButtonElement | HeadlessButton | null
+  protected declare readonly buttons: NodeListOf<HTMLButtonElement | HeadlessButton | null>
   protected declare readonly mainContainer: HTMLElement | null
 
   constructor() {
     super()
-    this.button = this.querySelector("[aria-controls][aria-expanded]")
-    this.mainContainer = this.querySelector(`#${this.button?.getAttribute("aria-controls")}`)
+    this.buttons = this.querySelectorAll("[aria-expanded][aria-controls]")
+    this.mainContainer = this.querySelector(`#${this.buttons[0]?.getAttribute("aria-controls")}`)
     this.dataset.state = this.ariaExpanded === "true" ? "open" : "close"
     this.updateAttributeState(String(this.dataset.state))
   }
@@ -58,8 +59,10 @@ class HeadlessNavigation extends HeadlessUi {
       this.updateAttributeState(newValue)
       if (newValue === "open") {
         this.open()
+        this.buttons.forEach((button) => (button.ariaExpanded = "true"))
       } else if (newValue === "close") {
         this.close()
+        this.buttons.forEach((button) => (button.ariaExpanded = "false"))
       }
     }
   }
@@ -71,16 +74,10 @@ class HeadlessNavigation extends HeadlessUi {
    * */
   protected checkRequirements(): void {
     if (!this.button) {
-      console.log(
-        `c% A button element with attribute "aria-controls" and "aria-expanded" is required`,
-        `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
-      )
+      throw new Error(`A button element with attribute "aria-controls" and "aria-expanded" is required`)
     }
     if (!this.mainContainer) {
-      console.log(
-        `c% A div element with ID equals button "aria-controls" is required`,
-        `color:red;background-color:pink;font-size:18px; padding: 3px; border-radius: 3px; border: red 1px solid;`
-      )
+      throw new Error(`A div element with ID equals button "aria-controls" is required`)
     }
   }
 
@@ -90,7 +87,10 @@ class HeadlessNavigation extends HeadlessUi {
    * @return void
    * */
   protected addEventListeners(): void {
-    super.addEventListeners()
+    this.buttons.forEach((button) => button.addEventListener("click", this.toggleOpen.bind(this)))
+    this.buttons.forEach((button) => button.addEventListener("keydown", this.buttonKeyEvent.bind(this)))
+    window.addEventListener("keydown", this.closeOnExitKeyDown.bind(this))
+    window.addEventListener("click", this.closeOnClickOutSide.bind(this))
     window.addEventListener("resize", this.closeOnResize.bind(this))
   }
 
@@ -100,7 +100,10 @@ class HeadlessNavigation extends HeadlessUi {
    * @return void
    * */
   protected removeEventListeners(): void {
-    super.removeEventListeners()
+    this.buttons.forEach((button) => button.removeEventListener("click", this.toggleOpen))
+    this.buttons.forEach((button) => button.removeEventListener("keydown", this.buttonKeyEvent))
+    window.removeEventListener("keydown", this.closeOnExitKeyDown)
+    window.removeEventListener("click", this.closeOnClickOutSide)
     window.removeEventListener("resize", this.closeOnResize)
   }
 
