@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev:ts": "tsc -p tsconfig.json --watch",
-    "dev:mix": "npx mix watch",
+    "dev:es": "node ./esbuild.config.js",
     "dev": "run-p dev:*",
     "clean": "rd /s /q esm dist lib build .cache>nul 2>&1|echo.>nul",
     "test": "jest",
@@ -36,16 +36,17 @@
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "chokidar": "^3.5.3",
+    "esbuild": "^0.16.7",
     "eslint": "^8.24.0",
     "husky": "^8.0.1",
-    "laravel-mix": "^6.0.49",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
     "ts-loader": "^9.4.1",
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6"
+    "@popperjs/core": "^2.11.6",
+    "vanilla-headless": "^0.8.0"
   },
   "jest": {
     "moduleFileExtensions": [

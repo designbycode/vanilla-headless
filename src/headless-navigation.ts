@@ -19,7 +19,7 @@ import HeadlessButton from "./headless-button"
  * @link closeOnResize
  * @since 0.1.4
  * */
-class HeadlessNavigation extends HeadlessUi {
+export class HeadlessNavigation extends HeadlessUi {
   protected declare readonly button: HTMLButtonElement | HeadlessButton | null
   protected declare readonly mainContainer: HTMLElement | null
 
