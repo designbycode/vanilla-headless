@@ -18,7 +18,7 @@
     "test:watch": "npm run test -- --watch",
     "precommit": "npm run test && lint-staged",
     "prebuild": "npm run clean",
-    "build": "tsc -p tsconfig.json && npx mix --production"
+    "build": "node ./esbuild.config.js"
   },
   "keywords": [
     "headlessui",
