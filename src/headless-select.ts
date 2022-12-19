@@ -18,11 +18,9 @@ export class HeadlessSelect extends HeadlessDropdown {
     protected itemClickEvent(event: any): void {
         event.preventDefault()
         super.itemClickEvent(event)
-        this.input.value = event.target.innerText
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        this.buttonValue.innerText = event.target.innerText
-        if(this.form) {
+        this.input.value = event.target.dataset.value
+
+        if(!this.form) {
             this.form.submit()
         }
     }
