@@ -20,7 +20,7 @@ export class HeadlessSelect extends HeadlessDropdown {
         super.itemClickEvent(event)
         this.input.value = event.target.dataset.value
 
-        if(!this.form) {
+        if(this.form) {
             this.form.submit()
         }
     }
