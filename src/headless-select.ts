@@ -2,14 +2,14 @@ import {HeadlessDropdown} from "./headless-dropdown";
 
 
 export class HeadlessSelect extends HeadlessDropdown {
-    private input: HTMLInputElement;
-    private buttonValue: Element;
+    private input: HTMLInputElement | null;
     private readonly form: HTMLFormElement | null;
+    private dataValue: HTMLElement;
     constructor() {
         super();
-        this.input = this.querySelector('input')
-        this.buttonValue = this.querySelector('#button')
         this.form = this.querySelector('form')
+        this.input = this.querySelector('input[data-select="input"]')
+        this.dataValue = this.querySelector('[data-select="value"]')
     }
 
     /**
@@ -19,7 +19,7 @@ export class HeadlessSelect extends HeadlessDropdown {
         event.preventDefault()
         super.itemClickEvent(event)
         this.input.value = event.target.dataset.value
-
+        this.dataValue.innerText = event.target.dataset.value
         if(this.form) {
             this.form.submit()
         }

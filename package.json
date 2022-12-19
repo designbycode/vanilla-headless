@@ -10,9 +10,7 @@
     "url": "https://github.com/DesignByCode/vanilla-headless/issues"
   },
   "scripts": {
-    "dev:ts": "tsc -p tsconfig.json --watch",
-    "dev:es": "node ./esbuild.config.js",
-    "dev": "run-p dev:*",
+    "dev": "node ./esbuild.config.js",
     "clean": "rd /s /q esm dist lib build .cache>nul 2>&1|echo.>nul",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
