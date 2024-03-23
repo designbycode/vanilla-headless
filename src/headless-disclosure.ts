@@ -13,7 +13,7 @@ import HeadlessButton from "./headless-button"
  * @since 0.1.4
  * */
 export class HeadlessDisclosure extends HTMLElement {
-  private buttons: NodeListOf<HTMLButtonElement | HeadlessButton> | null
+  protected buttons: NodeListOf<HTMLButtonElement | HeadlessButton> | null
 
   constructor() {
     super()
@@ -37,7 +37,7 @@ export class HeadlessDisclosure extends HTMLElement {
    * Find element with ID that matches button with attribute aria-controls
    * @parma value
    * */
-  private childSection(value: HTMLElement | null) {
+  protected childSection(value: HTMLElement | null) {
     return this.querySelector(`#${value?.getAttribute("aria-controls")}`)
   }
 
@@ -46,7 +46,7 @@ export class HeadlessDisclosure extends HTMLElement {
    * @param elem
    * @param value
    * */
-  private changeHidden(elem: any, value: boolean) {
+  protected changeHidden(elem: any, value: boolean) {
     if (elem) {
       elem.hidden = value
     }
@@ -55,7 +55,7 @@ export class HeadlessDisclosure extends HTMLElement {
   /**
    * Change visibility of element with id that matches button with attribute aria-controls
    * */
-  private hideContent(): void {
+  protected hideContent(): void {
     this.buttons?.forEach((button) => {
       if (button.getAttribute("aria-expanded") === "false") {
         const section = this.childSection(button) as HTMLElement | null
@@ -68,7 +68,7 @@ export class HeadlessDisclosure extends HTMLElement {
    * Event for toggling visibility of element
    * @return event
    * */
-  private toggleVisibility(event: any): void {
+  protected toggleVisibility(event: any): void {
     const target = this.childSection(event.target) as HTMLElement | null
     if (event.target.getAttribute("aria-expanded") === "false") {
       event.target.setAttribute("aria-expanded", "true")
